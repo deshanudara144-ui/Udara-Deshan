@@ -1,0 +1,4391 @@
+options:
+  parameters:
+    author: PulseTalk
+    catch_exceptions: 'True'
+    category: '[GRC Hier Blocks]'
+    cmake_opt: ''
+    comment: ''
+    copyright: ''
+    description: ''
+    gen_cmake: 'On'
+    gen_linking: dynamic
+    generate_options: qt_gui
+    hier_block_src_path: '.:'
+    id: user2
+    max_nouts: '0'
+    output_language: python
+    placement: (0,0)
+    qt_qss_theme: ''
+    realtime_scheduling: ''
+    run: 'True'
+    run_command: '{python} -u {filename}'
+    run_options: prompt
+    sizing_mode: fixed
+    thread_safe_setters: ''
+    title: User 2
+    window_size: (1000,1000)
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [16, 12.0]
+    rotation: 0
+    state: enabled
+
+blocks:
+- name: cc_dec
+  id: variable_cc_decoder_def
+  parameters:
+    comment: ''
+    dim1: '1'
+    dim2: '4'
+    framebits: MTU*8
+    k: k
+    mode: fec.CC_TAILBITING
+    ndim: '1'
+    padding: 'False'
+    polys: polys
+    rate: '2'
+    state_end: '-1'
+    state_start: '0'
+    value: '"ok"'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1152, 1864.0]
+    rotation: 0
+    state: enabled
+- name: cc_dec_0
+  id: variable_cc_decoder_def
+  parameters:
+    comment: ''
+    dim1: '1'
+    dim2: '4'
+    framebits: MTU*8
+    k: k
+    mode: fec.CC_TAILBITING
+    ndim: '1'
+    padding: 'False'
+    polys: polys
+    rate: '2'
+    state_end: '-1'
+    state_start: '0'
+    value: '"ok"'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [3696, 1892.0]
+    rotation: 0
+    state: enabled
+- name: cc_enc
+  id: variable_cc_encoder_def
+  parameters:
+    comment: ''
+    dim1: '1'
+    dim2: '1'
+    framebits: MTU*8
+    k: k
+    mode: fec.CC_TAILBITING
+    ndim: '0'
+    padding: 'False'
+    polys: polys
+    rate: '2'
+    state_start: '0'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [880, 16.0]
+    rotation: 0
+    state: enabled
+- name: dst_address
+  id: variable
+  parameters:
+    comment: ''
+    value: '0x0001'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1552, 32.0]
+    rotation: 0
+    state: enabled
+- name: excess_bw
+  id: variable
+  parameters:
+    comment: ''
+    value: '0.35'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1264, 32.0]
+    rotation: 180
+    state: enabled
+- name: freqA
+  id: variable
+  parameters:
+    comment: ''
+    value: 1.2e9
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [648, 88.0]
+    rotation: 0
+    state: enabled
+- name: freqT
+  id: variable
+  parameters:
+    comment: ''
+    value: 2.4e9
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [560, 88.0]
+    rotation: 0
+    state: enabled
+- name: hdr_format
+  id: variable_header_format_default
+  parameters:
+    access_code: '00011010110011111111110000011101'
+    bps: '1'
+    comment: ''
+    threshold: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [368, 16.0]
+    rotation: 0
+    state: true
+- name: k
+  id: variable
+  parameters:
+    comment: ''
+    value: '7'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [560, 16.0]
+    rotation: 0
+    state: enabled
+- name: low_pass_filter_taps
+  id: variable_low_pass_filter_taps
+  parameters:
+    beta: '6.76'
+    comment: ''
+    cutoff_freq: '20000'
+    gain: '1.0'
+    samp_rate: samp_rate
+    value: ''
+    width: '2000'
+    win: window.WIN_HAMMING
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [744, 16.0]
+    rotation: 0
+    state: enabled
+- name: nfilts
+  id: variable
+  parameters:
+    comment: ''
+    value: '32'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [560, 1160.0]
+    rotation: 0
+    state: enabled
+- name: phase_bw
+  id: variable_qtgui_range
+  parameters:
+    comment: ''
+    gui_hint: 0,0,1,1
+    label: 'Phase: Bandwidth'
+    min_len: '200'
+    orient: QtCore.Qt.Horizontal
+    rangeType: float
+    start: '0.0'
+    step: '0.01'
+    stop: '1.0'
+    value: 6.28/100.0
+    widget: slider
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1296, 1152.0]
+    rotation: 0
+    state: enabled
+- name: polys
+  id: variable
+  parameters:
+    comment: ''
+    value: '[109, 79]'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [648, 16.0]
+    rotation: 0
+    state: enabled
+- name: qpsk
+  id: variable_constellation_rect
+  parameters:
+    comment: ''
+    const_points: '[0.707+0.707j, -0.707+0.707j, -0.707-0.707j, 0.707-0.707j]'
+    imag_sect: '2'
+    precision: '8'
+    real_sect: '2'
+    rot_sym: '4'
+    soft_dec_lut: None
+    sym_map: '[0, 1, 2, 3]'
+    w_imag_sect: '1'
+    w_real_sect: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1072, 32.0]
+    rotation: 180
+    state: enabled
+- name: qpsk_0
+  id: variable_constellation_rect
+  parameters:
+    comment: ''
+    const_points: '[0.707+0.707j, -0.707+0.707j, -0.707-0.707j, 0.707-0.707j]'
+    imag_sect: '2'
+    precision: '8'
+    real_sect: '2'
+    rot_sym: '4'
+    soft_dec_lut: None
+    sym_map: '[0, 1, 2, 3]'
+    w_imag_sect: '1'
+    w_real_sect: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1584, 1536.0]
+    rotation: 0
+    state: enabled
+- name: qpsk_0_0
+  id: variable_constellation_rect
+  parameters:
+    comment: ''
+    const_points: '[0.707+0.707j, -0.707+0.707j, -0.707-0.707j, 0.707-0.707j]'
+    imag_sect: '2'
+    precision: '8'
+    real_sect: '2'
+    rot_sym: '4'
+    soft_dec_lut: None
+    sym_map: '[0, 1, 2, 3]'
+    w_imag_sect: '1'
+    w_real_sect: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [4112, 1440.0]
+    rotation: 0
+    state: enabled
+- name: reciver_address
+  id: variable
+  parameters:
+    comment: ''
+    value: '0x0002'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [640, 1168.0]
+    rotation: 0
+    state: enabled
+- name: rf_gain
+  id: variable_qtgui_range
+  parameters:
+    comment: ''
+    gui_hint: ''
+    label: RF_Gain
+    min_len: '200'
+    orient: QtCore.Qt.Horizontal
+    rangeType: float
+    start: '-24'
+    step: '1'
+    stop: '66'
+    value: '43'
+    widget: counter_slider
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1440, 32.0]
+    rotation: 0
+    state: enabled
+- name: rrc_taps
+  id: variable
+  parameters:
+    comment: ''
+    value: firdes.root_raised_cosine(nfilts, nfilts, 1.0/float(sps), 0.35, 11*sps*nfilts)
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [400, 1160.0]
+    rotation: 0
+    state: enabled
+- name: samp_rate
+  id: variable
+  parameters:
+    comment: ''
+    value: 1e6
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [184, 16.0]
+    rotation: 0
+    state: enabled
+- name: sps
+  id: variable
+  parameters:
+    comment: ''
+    value: '4'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1376, 32.0]
+    rotation: 180
+    state: enabled
+- name: src_address
+  id: variable
+  parameters:
+    comment: ''
+    value: '0x0002'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1648, 32.0]
+    rotation: 0
+    state: enabled
+- name: variable_adaptive_algorithm_0
+  id: variable_adaptive_algorithm
+  parameters:
+    comment: ''
+    cons: qpsk
+    delta: '10.0'
+    ffactor: '0.99'
+    modulus: '4'
+    step_size: '.0001'
+    type: cma
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [944, 1168.0]
+    rotation: 0
+    state: enabled
+- name: MTU
+  id: parameter
+  parameters:
+    alias: ''
+    comment: ''
+    hide: none
+    label: MTU
+    short_id: ''
+    type: intx
+    value: '1500'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [280, 16.0]
+    rotation: 0
+    state: enabled
+- name: blocks_char_to_float_0_0
+  id: blocks_char_to_float
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    scale: '1'
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [640, 616.0]
+    rotation: 0
+    state: enabled
+- name: blocks_char_to_float_0_0_0
+  id: blocks_char_to_float
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    scale: '1'
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [2984, 304.0]
+    rotation: 0
+    state: enabled
+- name: blocks_char_to_float_1_1
+  id: blocks_char_to_float
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    scale: '1'
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1456, 1776.0]
+    rotation: 180
+    state: disabled
+- name: blocks_char_to_float_1_1_0
+  id: blocks_char_to_float
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    scale: '1'
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [3984, 1688.0]
+    rotation: 180
+    state: enabled
+- name: blocks_char_to_float_2_0
+  id: blocks_char_to_float
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    scale: '1'
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [704, 1680.0]
+    rotation: 180
+    state: enabled
+- name: blocks_char_to_float_2_0_0
+  id: blocks_char_to_float
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    scale: '1'
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [3232, 1592.0]
+    rotation: 180
+    state: enabled
+- name: blocks_file_sink_0
+  id: blocks_file_sink
+  parameters:
+    affinity: ''
+    alias: ''
+    append: 'False'
+    comment: ''
+    file: gemba.tmp
+    type: byte
+    unbuffered: 'False'
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [0, 1712.0]
+    rotation: 180
+    state: disabled
+- name: blocks_file_source_0
+  id: blocks_file_source
+  parameters:
+    affinity: ''
+    alias: ''
+    begin_tag: pmt.intern("stream_start")
+    comment: ''
+    file: r"/mnt/hgfs/CDP_shared/test8n1/message.txt"
+    length: '0'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    offset: '0'
+    repeat: 'True'
+    type: byte
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [48, 624.0]
+    rotation: 0
+    state: disabled
+- name: blocks_message_debug_0
+  id: blocks_message_debug
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    en_uvec: 'True'
+    log_level: info
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [432, 2392.0]
+    rotation: 0
+    state: disabled
+- name: blocks_message_debug_0_0_0
+  id: blocks_message_debug
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    en_uvec: 'True'
+    log_level: info
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [3816, 408.0]
+    rotation: 0
+    state: disabled
+- name: blocks_message_debug_0_0_1
+  id: blocks_message_debug
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    en_uvec: 'True'
+    log_level: info
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1288, 528.0]
+    rotation: 0
+    state: disabled
+- name: blocks_multiply_const_vxx_0_0
+  id: blocks_multiply_const_vxx
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    const: '0.8'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    type: complex
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1440, 888.0]
+    rotation: 0
+    state: enabled
+- name: blocks_multiply_const_vxx_0_0_0
+  id: blocks_multiply_const_vxx
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    const: '0.8'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    type: complex
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [3936, 608.0]
+    rotation: 0
+    state: enabled
+- name: blocks_repack_bits_bb_0
+  id: blocks_repack_bits_bb
+  parameters:
+    affinity: ''
+    alias: ''
+    align_output: 'False'
+    comment: ''
+    endianness: gr.GR_MSB_FIRST
+    k: '1'
+    l: '8'
+    len_tag_key: '"packet_len"'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [912, 1712.0]
+    rotation: 180
+    state: enabled
+- name: blocks_repack_bits_bb_0_0
+  id: blocks_repack_bits_bb
+  parameters:
+    affinity: ''
+    alias: ''
+    align_output: 'False'
+    comment: ''
+    endianness: gr.GR_MSB_FIRST
+    k: '1'
+    l: '8'
+    len_tag_key: '"packet_len"'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [3440, 1624.0]
+    rotation: 180
+    state: enabled
+- name: blocks_repack_bits_bb_0_0_0_0
+  id: blocks_repack_bits_bb
+  parameters:
+    affinity: ''
+    alias: ''
+    align_output: 'False'
+    comment: ''
+    endianness: gr.GR_MSB_FIRST
+    k: '1'
+    l: '8'
+    len_tag_key: packet_len
+    maxoutbuf: '0'
+    minoutbuf: '0'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [168, 896.0]
+    rotation: 0
+    state: disabled
+- name: blocks_repack_bits_bb_0_0_0_0_0
+  id: blocks_repack_bits_bb
+  parameters:
+    affinity: ''
+    alias: ''
+    align_output: 'False'
+    comment: ''
+    endianness: gr.GR_MSB_FIRST
+    k: '1'
+    l: '8'
+    len_tag_key: packet_len
+    maxoutbuf: '0'
+    minoutbuf: '0'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [2728, 496.0]
+    rotation: 0
+    state: enabled
+- name: blocks_repack_bits_bb_0_0_1
+  id: blocks_repack_bits_bb
+  parameters:
+    affinity: ''
+    alias: ''
+    align_output: 'False'
+    comment: ''
+    endianness: gr.GR_MSB_FIRST
+    k: '8'
+    l: '1'
+    len_tag_key: packet_len
+    maxoutbuf: '0'
+    minoutbuf: '0'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1584, 304.0]
+    rotation: 0
+    state: disabled
+- name: blocks_repack_bits_bb_0_0_1_0
+  id: blocks_repack_bits_bb
+  parameters:
+    affinity: ''
+    alias: ''
+    align_output: 'False'
+    comment: ''
+    endianness: gr.GR_MSB_FIRST
+    k: '8'
+    l: '1'
+    len_tag_key: packet_len
+    maxoutbuf: '0'
+    minoutbuf: '0'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [3784, 184.0]
+    rotation: 0
+    state: enabled
+- name: blocks_tagged_stream_mux_0_0_0
+  id: blocks_tagged_stream_mux
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    lengthtagname: packet_len
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    ninputs: '2'
+    tag_preserve_head_pos: '0'
+    type: byte
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [944, 928.0]
+    rotation: 0
+    state: enabled
+- name: blocks_tagged_stream_mux_0_0_0_0
+  id: blocks_tagged_stream_mux
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    lengthtagname: packet_len
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    ninputs: '2'
+    tag_preserve_head_pos: '0'
+    type: byte
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [3440, 648.0]
+    rotation: 0
+    state: enabled
+- name: blocks_throttle2_0
+  id: blocks_throttle2
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    ignoretag: 'True'
+    limit: auto
+    maximum: '0.1'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    samples_per_second: samp_rate
+    type: complex
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [352, 1392.0]
+    rotation: 0
+    state: enabled
+- name: blocks_throttle2_0_0
+  id: blocks_throttle2
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    ignoretag: 'True'
+    limit: auto
+    maximum: '0.1'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    samples_per_second: samp_rate
+    type: complex
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [2880, 1304.0]
+    rotation: 0
+    state: enabled
+- name: blocks_throttle2_0_1
+  id: blocks_throttle2
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    ignoretag: 'True'
+    limit: auto
+    maximum: '0.1'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    samples_per_second: samp_rate
+    type: complex
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1664, 880.0]
+    rotation: 0
+    state: enabled
+- name: blocks_throttle2_0_1_0
+  id: blocks_throttle2
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    ignoretag: 'True'
+    limit: auto
+    maximum: '0.1'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    samples_per_second: samp_rate
+    type: complex
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [4160, 600.0]
+    rotation: 0
+    state: enabled
+- name: blocks_unpack_k_bits_bb_0_0
+  id: blocks_unpack_k_bits_bb
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    k: '2'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [2128, 1776.0]
+    rotation: 180
+    state: enabled
+- name: blocks_unpack_k_bits_bb_0_0_0
+  id: blocks_unpack_k_bits_bb
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    k: '2'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [4656, 1688.0]
+    rotation: 180
+    state: enabled
+- name: digital_constellation_decoder_cb_0
+  id: digital_constellation_decoder_cb
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    constellation: qpsk
+    maxoutbuf: '0'
+    minoutbuf: '0'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1584, 1472.0]
+    rotation: 0
+    state: enabled
+- name: digital_constellation_decoder_cb_0_0
+  id: digital_constellation_decoder_cb
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    constellation: qpsk
+    maxoutbuf: '0'
+    minoutbuf: '0'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [4112, 1384.0]
+    rotation: 0
+    state: enabled
+- name: digital_constellation_modulator_0_0
+  id: digital_constellation_modulator
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    constellation: qpsk
+    differential: 'True'
+    excess_bw: excess_bw
+    log: 'False'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    samples_per_symbol: sps
+    truncate: 'False'
+    verbose: 'False'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1208, 880.0]
+    rotation: 0
+    state: enabled
+- name: digital_constellation_modulator_0_0_0
+  id: digital_constellation_modulator
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    constellation: qpsk
+    differential: 'True'
+    excess_bw: excess_bw
+    log: 'False'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    samples_per_symbol: sps
+    truncate: 'False'
+    verbose: 'False'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [3616, 584.0]
+    rotation: 0
+    state: enabled
+- name: digital_correlate_access_code_xx_ts_0
+  id: digital_correlate_access_code_xx_ts
+  parameters:
+    access_code: '00011010110011111111110000011101'
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    tagname: packet_len
+    threshold: '2'
+    type: byte
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1808, 1752.0]
+    rotation: 180
+    state: enabled
+- name: digital_correlate_access_code_xx_ts_0_0
+  id: digital_correlate_access_code_xx_ts
+  parameters:
+    access_code: '00011010110011111111110000011101'
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    tagname: packet_len
+    threshold: '2'
+    type: byte
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [4336, 1664.0]
+    rotation: 180
+    state: enabled
+- name: digital_costas_loop_cc_0
+  id: digital_costas_loop_cc
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    order: '4'
+    use_snr: 'False'
+    w: phase_bw
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1392, 1336.0]
+    rotation: 0
+    state: enabled
+- name: digital_costas_loop_cc_0_0
+  id: digital_costas_loop_cc
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    order: '4'
+    use_snr: 'False'
+    w: phase_bw
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [3808, 1320.0]
+    rotation: 0
+    state: enabled
+- name: digital_crc_append_0_0_0
+  id: digital_crc_append
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    final_xor: '0xFFFFFFFF'
+    initial_value: '0xFFFFFFFF'
+    input_reflected: 'True'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_bits: '32'
+    poly: '0x4C11DB7'
+    result_reflected: 'True'
+    skip_header_bytes: '0'
+    swap_endianness: 'False'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [952, 344.0]
+    rotation: 0
+    state: enabled
+- name: digital_crc_append_0_0_0_0
+  id: digital_crc_append
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    final_xor: '0xFFFFFFFF'
+    initial_value: '0xFFFFFFFF'
+    input_reflected: 'True'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_bits: '32'
+    poly: '0x4C11DB7'
+    result_reflected: 'True'
+    skip_header_bytes: '0'
+    swap_endianness: 'False'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [3232, 208.0]
+    rotation: 0
+    state: enabled
+- name: digital_crc_check_0
+  id: digital_crc_check
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: Discard CRC = True
+    discard_crc: 'True'
+    final_xor: '0xFFFFFFFF'
+    initial_value: '0xFFFFFFFF'
+    input_reflected: 'True'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_bits: '32'
+    poly: '0x4C11DB7'
+    result_reflected: 'True'
+    skip_header_bytes: '0'
+    swap_endianness: 'False'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [760, 2072.0]
+    rotation: 180
+    state: enabled
+- name: digital_crc_check_0_0
+  id: digital_crc_check
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: Discard CRC = True
+    discard_crc: 'True'
+    final_xor: '0xFFFFFFFF'
+    initial_value: '0xFFFFFFFF'
+    input_reflected: 'True'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_bits: '32'
+    poly: '0x4C11DB7'
+    result_reflected: 'True'
+    skip_header_bytes: '0'
+    swap_endianness: 'False'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [3360, 1904.0]
+    rotation: 180
+    state: enabled
+- name: digital_diff_decoder_bb_0
+  id: digital_diff_decoder_bb
+  parameters:
+    affinity: ''
+    alias: ''
+    coding: digital.DIFF_DIFFERENTIAL
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    modulus: '4'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [2024, 1472.0]
+    rotation: 0
+    state: enabled
+- name: digital_diff_decoder_bb_0_0
+  id: digital_diff_decoder_bb
+  parameters:
+    affinity: ''
+    alias: ''
+    coding: digital.DIFF_DIFFERENTIAL
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    modulus: '4'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [4368, 1384.0]
+    rotation: 0
+    state: enabled
+- name: digital_linear_equalizer_0
+  id: digital_linear_equalizer
+  parameters:
+    adapt_after_training: 'True'
+    affinity: ''
+    alg: variable_adaptive_algorithm_0
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_taps: '15'
+    sps: '4'
+    training_sequence: '[ ]'
+    training_start_tag: corr_est
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1144, 1424.0]
+    rotation: 0
+    state: enabled
+- name: digital_linear_equalizer_0_0
+  id: digital_linear_equalizer
+  parameters:
+    adapt_after_training: 'True'
+    affinity: ''
+    alg: variable_adaptive_algorithm_0
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_taps: '15'
+    sps: '4'
+    training_sequence: '[ ]'
+    training_start_tag: corr_est
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [3504, 1336.0]
+    rotation: 0
+    state: enabled
+- name: digital_map_bb_0
+  id: digital_map_bb
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    map: '[0,1,2,3]'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [2048, 1360.0]
+    rotation: 0
+    state: enabled
+- name: digital_map_bb_0_0
+  id: digital_map_bb
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    map: '[-1, 1]'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1632, 1776.0]
+    rotation: 180
+    state: disabled
+- name: digital_map_bb_0_0_0
+  id: digital_map_bb
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    map: '[-1, 1]'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [4160, 1688.0]
+    rotation: 180
+    state: enabled
+- name: digital_map_bb_0_1
+  id: digital_map_bb
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    map: '[0,1,2,3]'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [4576, 1272.0]
+    rotation: 0
+    state: enabled
+- name: digital_protocol_formatter_async_0_0
+  id: digital_protocol_formatter_async
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    format: hdr_format
+    maxoutbuf: '0'
+    minoutbuf: '0'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [448, 912.0]
+    rotation: 0
+    state: enabled
+- name: digital_protocol_formatter_async_0_0_0
+  id: digital_protocol_formatter_async
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    format: hdr_format
+    maxoutbuf: '0'
+    minoutbuf: '0'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [2936, 624.0]
+    rotation: 0
+    state: enabled
+- name: digital_symbol_sync_xx_0
+  id: digital_symbol_sync_xx
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    constellation: digital.constellation_bpsk().base()
+    damping: '1.4'
+    loop_bw: '62.8e-3'
+    max_dev: '1.5'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    nfilters: '32'
+    osps: '4'
+    pfb_mf_taps: rrc_taps
+    resamp_type: digital.IR_PFB_MF
+    sps: sps
+    ted_gain: '1.0'
+    ted_type: digital.TED_SIGNAL_TIMES_SLOPE_ML
+    type: cc
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [640, 1360.0]
+    rotation: 0
+    state: enabled
+- name: digital_symbol_sync_xx_0_0
+  id: digital_symbol_sync_xx
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    constellation: digital.constellation_bpsk().base()
+    damping: '1.4'
+    loop_bw: '62.8e-3'
+    max_dev: '1.5'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    nfilters: '32'
+    osps: '4'
+    pfb_mf_taps: rrc_taps
+    resamp_type: digital.IR_PFB_MF
+    sps: sps
+    ted_gain: '1.0'
+    ted_type: digital.TED_SIGNAL_TIMES_SLOPE_ML
+    type: cc
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [3168, 1264.0]
+    rotation: 0
+    state: enabled
+- name: epy_block_0
+  id: epy_block
+  parameters:
+    _source_code: "import time\nimport threading\nfrom gnuradio import gr\nimport\
+      \ pmt\n\nclass unique_seqnum_counter(gr.basic_block):\n    \"\"\"\n    Count\
+      \ UNIQUE seq_num packets.\n    If unique_count == threshold within timeout \u2192\
+      \ status = 1\n    If timeout occurs first \u2192 status = 0\n\n    seq_num is\
+      \ extracted from bytes 5 and 6.\n    \"\"\"\n\n    def __init__(self, timeout_ms=500):\n\
+      \        gr.basic_block.__init__(\n            self,\n            name=\"unique_seqnum_counter\"\
+      ,\n            in_sig=None,\n            out_sig=None\n        )\n\n       \
+      \ self.timeout_ms = timeout_ms\n\n        # Message ports\n        self.message_port_register_in(pmt.intern(\"\
+      in\"))\n        self.message_port_register_in(pmt.intern(\"threshold_in\"))\n\
+      \        self.message_port_register_out(pmt.intern(\"status_out\"))\n\n    \
+      \    # Handlers\n        self.set_msg_handler(pmt.intern(\"in\"), self.handle_packet)\n\
+      \        self.set_msg_handler(pmt.intern(\"threshold_in\"), self.handle_threshold)\n\
+      \n        # State\n        self.unique_seqs = set()\n        self.threshold\
+      \ = None\n        self.timer = None\n        self.lock = threading.Lock()\n\n\
+      \n    # -------------------------------\n    # Receive threshold and start new\
+      \ session\n    # -------------------------------\n    def handle_threshold(self,\
+      \ msg):\n        if pmt.is_integer(msg):\n            with self.lock:\n    \
+      \            self.threshold = pmt.to_long(msg)\n                self.unique_seqs.clear()\n\
+      \n                # Reset timer\n                if self.timer:\n          \
+      \          self.timer.cancel()\n                self.timer = None\n\n\n    #\
+      \ -------------------------------\n    # Incoming packets\n    # -------------------------------\n\
+      \    def handle_packet(self, msg_pdu):\n        if not pmt.is_pair(msg_pdu):\n\
+      \            return\n\n        meta = pmt.car(msg_pdu)\n        data = pmt.cdr(msg_pdu)\n\
+      \n        if not pmt.is_u8vector(data):\n            return\n\n        payload\
+      \ = bytes(pmt.u8vector_elements(data))\n\n        if len(payload) < 7:\n   \
+      \         return\n\n        # Extract sequence number (bytes 5,6)\n        seq_num\
+      \ = (payload[5] << 8) | payload[6]\n\n        with self.lock:\n\n          \
+      \  # First time new unique seq_num appears\n            if seq_num not in self.unique_seqs:\n\
+      \                self.unique_seqs.add(seq_num)\n\n                # Start timeout\
+      \ timer on first unique seq\n                if len(self.unique_seqs) == 1:\n\
+      \                    if self.timer:\n                        self.timer.cancel()\n\
+      \                    self.timer = threading.Timer(self.timeout_ms / 1000.0,\
+      \ self.timeout_expired)\n                    self.timer.start()\n\n        \
+      \    # Check threshold\n            if self.threshold is not None and len(self.unique_seqs)\
+      \ == self.threshold:\n                # Success\n                self.message_port_pub(pmt.intern(\"\
+      status_out\"), pmt.from_long(1))\n\n                # Reset for next cycle\n\
+      \                if self.timer:\n                    self.timer.cancel()\n \
+      \               self.timer = None\n                self.unique_seqs.clear()\n\
+      \n\n    # -------------------------------\n    # On timeout: send failure\n\
+      \    # -------------------------------\n    def timeout_expired(self):\n   \
+      \     with self.lock:\n            self.message_port_pub(pmt.intern(\"status_out\"\
+      ), pmt.from_long(0))\n            self.unique_seqs.clear()\n            self.timer\
+      \ = None\n"
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    timeout_ms: 2e3
+  states:
+    _io_cache: "('unique_seqnum_counter', 'unique_seqnum_counter', [('timeout_ms',\
+      \ '500')], [('threshold_in', 'message', 1), ('in', 'message', 1)], [('status_out',\
+      \ 'message', 1)], '\\n    Count UNIQUE seq_num packets.\\n    If unique_count\
+      \ == threshold within timeout \u2192 status = 1\\n    If timeout occurs first\
+      \ \u2192 status = 0\\n\\n    seq_num is extracted from bytes 5 and 6.\\n   \
+      \ ', ['timeout_ms'])"
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [2936, 1840.0]
+    rotation: 180
+    state: enabled
+- name: epy_block_0_0
+  id: epy_block
+  parameters:
+    _source_code: "import pmt\nfrom gnuradio import gr\n\nclass dest_addr_filter(gr.basic_block):\n\
+      \    \"\"\"\n    Destination Address Filter Block\n    --------------------------------\n\
+      \    - Input: PDU (bytes)\n    - Output: PDU (bytes)\n    - Checks first 2 bytes\
+      \ of packet (destination address).\n    - If equal to configured receiver address,\
+      \ forwards packet.\n    \"\"\"\n\n    def __init__(self, receiver_addr=0x0001):\n\
+      \        gr.basic_block.__init__(self,\n            name=\"dest_addr_filter\"\
+      ,\n            in_sig=None,\n            out_sig=None)\n\n        # Runtime-configurable\
+      \ receiver address (16-bit int)\n        self.receiver_addr = receiver_addr\n\
+      \n        # Register PDU input/output ports\n        self.message_port_register_in(pmt.intern(\"\
+      in\"))\n        self.message_port_register_out(pmt.intern(\"out\"))\n\n    \
+      \    # Bind handler\n        self.set_msg_handler(pmt.intern(\"in\"), self.handle_pdu)\n\
+      \n    def handle_pdu(self, msg):\n        \"\"\"\n        Handle incoming PDU:\n\
+      \        - Extract bytes\n        - Compare first 2 bytes with receiver_addr\n\
+      \        - Forward if equal\n        \"\"\"\n        if pmt.is_pair(msg):\n\
+      \            meta = pmt.car(msg)\n            data = pmt.cdr(msg)\n\n      \
+      \      # Convert list of ints \u2192 bytes\n            packet_bytes = bytes(pmt.u8vector_elements(data))\n\
+      \n            if len(packet_bytes) >= 2:\n                # Extract first 2\
+      \ bytes as destination address\n                dest_addr = (packet_bytes[0]\
+      \ << 8) | packet_bytes[1]\n\n                if dest_addr == self.receiver_addr:\n\
+      \                    # Forward packet\n                    self.message_port_pub(pmt.intern(\"\
+      out\"), msg)\n                else:\n                    # Drop silently (could\
+      \ log/debug here)\n                    pass\n\n    def set_receiver_addr(self,\
+      \ new_addr):\n        \"\"\"\n        Runtime setter for receiver address\n\
+      \        \"\"\"\n        self.receiver_addr = new_addr\n\n"
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    receiver_addr: reciver_address
+  states:
+    _io_cache: '(''dest_addr_filter'', ''dest_addr_filter'', [(''receiver_addr'',
+      ''1'')], [(''in'', ''message'', 1)], [(''out'', ''message'', 1)], ''\n    Destination
+      Address Filter Block\n    --------------------------------\n    - Input: PDU
+      (bytes)\n    - Output: PDU (bytes)\n    - Checks first 2 bytes of packet (destination
+      address).\n    - If equal to configured receiver address, forwards packet.\n    '',
+      [''receiver_addr''])'
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [616, 2008.0]
+    rotation: 180
+    state: enabled
+- name: epy_block_0_0_0
+  id: epy_block
+  parameters:
+    _source_code: "import pmt\nfrom gnuradio import gr\n\nclass dest_addr_filter(gr.basic_block):\n\
+      \    \"\"\"\n    Destination Address Filter Block\n    --------------------------------\n\
+      \    - Input: PDU (bytes)\n    - Output: PDU (bytes)\n    - Checks first 2 bytes\
+      \ of packet (destination address).\n    - If equal to configured receiver address,\
+      \ forwards packet.\n    \"\"\"\n\n    def __init__(self, receiver_addr=0x0001):\n\
+      \        gr.basic_block.__init__(self,\n            name=\"dest_addr_filter\"\
+      ,\n            in_sig=None,\n            out_sig=None)\n\n        # Runtime-configurable\
+      \ receiver address (16-bit int)\n        self.receiver_addr = receiver_addr\n\
+      \n        # Register PDU input/output ports\n        self.message_port_register_in(pmt.intern(\"\
+      in\"))\n        self.message_port_register_out(pmt.intern(\"out\"))\n\n    \
+      \    # Bind handler\n        self.set_msg_handler(pmt.intern(\"in\"), self.handle_pdu)\n\
+      \n    def handle_pdu(self, msg):\n        \"\"\"\n        Handle incoming PDU:\n\
+      \        - Extract bytes\n        - Compare first 2 bytes with receiver_addr\n\
+      \        - Forward if equal\n        \"\"\"\n        if pmt.is_pair(msg):\n\
+      \            meta = pmt.car(msg)\n            data = pmt.cdr(msg)\n\n      \
+      \      # Convert list of ints \u2192 bytes\n            packet_bytes = bytes(pmt.u8vector_elements(data))\n\
+      \n            if len(packet_bytes) >= 2:\n                # Extract first 2\
+      \ bytes as destination address\n                dest_addr = (packet_bytes[0]\
+      \ << 8) | packet_bytes[1]\n\n                if dest_addr == self.receiver_addr:\n\
+      \                    # Forward packet\n                    self.message_port_pub(pmt.intern(\"\
+      out\"), msg)\n                else:\n                    # Drop silently (could\
+      \ log/debug here)\n                    pass\n\n    def set_receiver_addr(self,\
+      \ new_addr):\n        \"\"\"\n        Runtime setter for receiver address\n\
+      \        \"\"\"\n        self.receiver_addr = new_addr\n\n"
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    receiver_addr: reciver_address
+  states:
+    _io_cache: '(''dest_addr_filter'', ''dest_addr_filter'', [(''receiver_addr'',
+      ''1'')], [(''in'', ''message'', 1)], [(''out'', ''message'', 1)], ''\n    Destination
+      Address Filter Block\n    --------------------------------\n    - Input: PDU
+      (bytes)\n    - Output: PDU (bytes)\n    - Checks first 2 bytes of packet (destination
+      address).\n    - If equal to configured receiver address, forwards packet.\n    '',
+      [''receiver_addr''])'
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [3224, 2008.0]
+    rotation: 180
+    state: enabled
+- name: epy_block_1
+  id: epy_block
+  parameters:
+    _source_code: "#!/usr/bin/env python3\n# packet_group_processor_v2.py\n# GNURadio\
+      \ message-based block: stores non-duplicate PDUs, drops preamble, waits for\
+      \ post-filler,\n# then emits: dst_addr (2 bytes) + concatenated trimmed stored\
+      \ packets. Resets after post-filler.\n\nfrom gnuradio import gr\nimport pmt\n\
+      import threading\n\nclass packet_group_processor_v2(gr.basic_block):\n    \"\
+      \"\"\n    Parameters:\n      timeout_ms (int): how long to wait (from first\
+      \ stored packet) for post-filler before discarding (default 2000)\n      preamble_len\
+      \ (int): expected preamble length for strict detection (default 50)\n      first_packet_special\
+      \ (bool): if True, first stored packet is trimmed by removing bytes indices\
+      \ 1..6 inclusive\n                                   (i.e. keep byte 0 then\
+      \ keep bytes from index 7 onward).\n                                   If False\
+      \ (default) all stored packets are trimmed by removing first 6 bytes (pkt[6:]).\n\
+      \    \"\"\"\n\n    def __init__(self, timeout_ms=2000, preamble_len=50, first_packet_special=False):\n\
+      \        gr.basic_block.__init__(self,\n            name=\"packet_group_processor_v2\"\
+      ,\n            in_sig=None,\n            out_sig=None)\n\n        # message\
+      \ ports\n        self.message_port_register_in(pmt.intern(\"in\"))\n       \
+      \ self.set_msg_handler(pmt.intern(\"in\"), self.handle_msg)\n        self.message_port_register_out(pmt.intern(\"\
+      out\"))\n\n        # config\n        self.timeout_ms = int(timeout_ms)\n   \
+      \     self.preamble_len = int(preamble_len)\n        self.first_packet_special\
+      \ = bool(first_packet_special)\n\n        # state (protected by lock)\n    \
+      \    self.lock = threading.Lock()\n        self.seen_seqnums = set()   # drop\
+      \ duplicates while in this session\n        self.stored_packets = []    # list\
+      \ of bytes objects (original payloads)\n        self.timer = None\n\n    # -------\
+      \ utilities -------\n    def _cancel_timer(self):\n        if self.timer is\
+      \ not None:\n            try:\n                self.timer.cancel()\n       \
+      \     except Exception:\n                pass\n            self.timer = None\n\
+      \n    def _reset_all(self):\n        \"\"\"Reset block state: cancel timer,\
+      \ clear storage and seen seqnums.\"\"\"\n        with self.lock:\n         \
+      \   self._cancel_timer()\n            self.stored_packets = []\n           \
+      \ self.seen_seqnums = set()\n\n    def _start_timer(self):\n        \"\"\"Start\
+      \ timeout: if it fires, discard buffer and reset state.\"\"\"\n        def _on_timeout():\n\
+      \            with self.lock:\n                # Timeout: drop stored packets\
+      \ and seen seqnums\n                self.stored_packets = []\n             \
+      \   self.seen_seqnums = set()\n                self.timer = None\n        #\
+      \ always cancel and restart\n        self._cancel_timer()\n        t = threading.Timer(self.timeout_ms\
+      \ / 1000.0, _on_timeout)\n        t.daemon = True\n        t.start()\n     \
+      \   self.timer = t\n\n    # ------- classification helpers -------\n    def\
+      \ _extract_seqnum(self, data_bytes):\n        if len(data_bytes) < 6:\n    \
+      \        return None\n        # big-endian 2-byte seq at indices 4..5 as per\
+      \ your examples\n        return (data_bytes[4] << 8) | data_bytes[5]\n\n   \
+      \ def _is_preamble(self, data_bytes):\n        # strict preamble: matches your\
+      \ example: length==50 and many 0x55 after first 6 bytes\n        if len(data_bytes)\
+      \ == self.preamble_len:\n            tail = data_bytes[6:]\n            if len(tail)\
+      \ >= 8 and all(b == 0x55 for b in tail):\n                return True\n    \
+      \    return False\n\n    def _is_postfiller(self, data_bytes):\n        # strict\
+      \ post-filler detection: example ended with bytes 23 45 4F 46\n        if len(data_bytes)\
+      \ >= 4 and data_bytes[-4:] == bytes([0x23,0x45,0x4F,0x46]):\n            return\
+      \ True\n        # fallback: if longer than preamble length and has many 0x55\
+      \ in body but non-55 tail\n        if len(data_bytes) >= 50:\n            tail\
+      \ = data_bytes[6:]\n            if len(tail) >= 8:\n                count55\
+      \ = sum(1 for b in tail if b == 0x55)\n                if (count55 / len(tail))\
+      \ > 0.8 and any(b != 0x55 for b in tail[-8:]):\n                    return True\n\
+      \        return False\n\n    # ------- handle incoming PDU -------\n    def\
+      \ handle_msg(self, pdu):\n        # Expect PDU: pair(meta, u8vector)\n     \
+      \   try:\n            if not pmt.is_pair(pdu):\n                return\n   \
+      \         meta = pmt.car(pdu)        # keep meta for possible future use (currently\
+      \ not included in output)\n            u8vec = pmt.cdr(pdu)\n            data_bytes\
+      \ = bytes(pmt.u8vector_elements(u8vec))\n        except Exception:\n       \
+      \     return\n\n        # extract seqnum\n        seq = self._extract_seqnum(data_bytes)\n\
+      \        if seq is None:\n            # too short; drop\n            return\n\
+      \n        # duplicate check within current session\n        with self.lock:\n\
+      \            if seq in self.seen_seqnums:\n                # duplicate -> drop\n\
+      \                return\n            # mark as seen (so duplicates arriving\
+      \ later in same session are dropped)\n            self.seen_seqnums.add(seq)\n\
+      \n        # classify\n        if self._is_preamble(data_bytes):\n          \
+      \  # drop preamble; but ensure timer running (if we want to keep waiting for\
+      \ start of frame)\n            # (Your prior examples restarted timer on preamble;\
+      \ optional: here we do not start timer on preamble)\n            return\n\n\
+      \        if self._is_postfiller(data_bytes):\n            # flush stored packets\
+      \ if any, then reset\n            self._flush_and_emit()\n            # After\
+      \ flush, reset state completely\n            self._reset_all()\n           \
+      \ return\n\n        # normal packet -> store and ensure timeout started (from\
+      \ first stored packet)\n        with self.lock:\n            self.stored_packets.append(data_bytes)\n\
+      \            # start timer only if this is first stored packet\n           \
+      \ if self.timer is None:\n                self._start_timer()\n            #\
+      \ otherwise keep running timer (we don't restart on each stored packet)\n\n\
+      \    # ------- flush/emit -------\n    def _flush_and_emit(self):\n        with\
+      \ self.lock:\n            if not self.stored_packets:\n                return\n\
+      \n            # Destination address = first 2 bytes of first stored packet\n\
+      \            first_pkt = self.stored_packets[0]\n            if len(first_pkt)\
+      \ < 2:\n                # invalid; just reset\n                return\n    \
+      \        dst_addr = first_pkt[0:2]\n\n            out_payload = bytearray()\n\
+      \            out_payload.extend(dst_addr)\n\n            for idx, pkt in enumerate(self.stored_packets):\n\
+      \                # choose trimming behavior\n                if idx == 0 and\
+      \ self.first_packet_special:\n                    # remove bytes indices 1..6\
+      \ inclusive\n                    # keep byte 0 then append bytes from index\
+      \ 7 onward\n                    if len(pkt) <= 6:\n                        trimmed\
+      \ = b''\n                    else:\n                        trimmed = bytes([pkt[0]])\
+      \ + pkt[7:]\n                else:\n                    # default: remove first\
+      \ 6 bytes entirely (pkt[6:])\n                    if len(pkt) <= 6:\n      \
+      \                  trimmed = b''\n                    else:\n              \
+      \          trimmed = pkt[6:]\n                out_payload.extend(trimmed)\n\n\
+      \            # publish a single PDU: meta = PMT_NIL (user can change to aggregated\
+      \ meta if needed)\n            out_u8 = pmt.init_u8vector(len(out_payload),\
+      \ list(out_payload))\n            self.message_port_pub(pmt.intern(\"out\"),\
+      \ pmt.cons(pmt.PMT_NIL, out_u8))\n\n            # cancel timeout timer (we are\
+      \ resetting now)\n            self._cancel_timer()\n\n    # ------- optional\
+      \ external reset -------\n    def reset(self):\n        self._reset_all()\n\n"
+    affinity: ''
+    alias: ''
+    comment: ''
+    first_packet_special: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    preamble_len: '50'
+    timeout_ms: 1e3
+  states:
+    _io_cache: '(''packet_group_processor_v2'', ''packet_group_processor_v2'', [(''timeout_ms'',
+      ''2000''), (''preamble_len'', ''50''), (''first_packet_special'', ''False'')],
+      [(''in'', ''message'', 1)], [(''out'', ''message'', 1)], ''\n    Parameters:\n      timeout_ms
+      (int): how long to wait (from first stored packet) for post-filler before discarding
+      (default 2000)\n      preamble_len (int): expected preamble length for strict
+      detection (default 50)\n      first_packet_special (bool): if True, first stored
+      packet is trimmed by removing bytes indices 1..6 inclusive\n                                   (i.e.
+      keep byte 0 then keep bytes from index 7 onward).\n                                   If
+      False (default) all stored packets are trimmed by removing first 6 bytes (pkt[6:]).\n    '',
+      [''first_packet_special'', ''preamble_len'', ''timeout_ms''])'
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1208, 2256.0]
+    rotation: 0
+    state: disabled
+- name: epy_block_1_0
+  id: epy_block
+  parameters:
+    _source_code: "#!/usr/bin/env python\n# -*- coding: utf-8 -*-\n\nimport numpy\
+      \ as np\nfrom gnuradio import gr\nimport pmt\n\nclass pdu_header_stripper(gr.basic_block):\n\
+      \    \"\"\"\n    Strips header bytes from PDU packets.\n    Removes bytes at\
+      \ positions 0, 1, 4, 5 (0-indexed)\n    Keeps bytes at positions 2, 3, and all\
+      \ bytes from position 6 onwards\n    \"\"\"\n    def __init__(self):\n     \
+      \   gr.basic_block.__init__(self,\n            name=\"pdu_header_stripper\"\
+      ,\n            in_sig=None,\n            out_sig=None)\n        \n        #\
+      \ Register message ports\n        self.message_port_register_in(pmt.intern('pdu_in'))\n\
+      \        self.message_port_register_out(pmt.intern('pdu_out'))\n        \n \
+      \       # Set message handler\n        self.set_msg_handler(pmt.intern('pdu_in'),\
+      \ self.handle_pdu)\n        \n    def handle_pdu(self, pdu):\n        \"\"\"\
+      Process incoming PDU messages\"\"\"\n        # Extract metadata and data from\
+      \ PDU\n        meta = pmt.car(pdu)\n        data = pmt.cdr(pdu)\n        \n\
+      \        # Convert PMT vector to numpy array\n        if pmt.is_u8vector(data):\n\
+      \            data_array = np.array(pmt.u8vector_elements(data), dtype=np.uint8)\n\
+      \        else:\n            print(\"Warning: PDU data is not a u8vector\")\n\
+      \            return\n        \n        # Check if we have enough bytes\n   \
+      \     if len(data_array) < 6:\n            print(f\"Warning: PDU too short ({len(data_array)}\
+      \ bytes), need at least 6 bytes\")\n            return\n        \n        #\
+      \ Strip bytes at positions 0, 1, 4, 5\n        # Keep bytes at positions 2,\
+      \ 3, and everything from 6 onwards\n        stripped_data = np.concatenate([\n\
+      \            data_array[2:4],   # Bytes 2 and 3\n            data_array[6:]\
+      \     # Bytes 6 onwards (payload)\n        ])\n        \n        print(f\"Stripped\
+      \ PDU: {len(data_array)} bytes -> {len(stripped_data)} bytes\")\n        \n\
+      \        # Convert back to PMT u8vector\n        stripped_pmt = pmt.init_u8vector(len(stripped_data),\
+      \ stripped_data.tolist())\n        \n        # Create new PDU with same metadata\n\
+      \        new_pdu = pmt.cons(meta, stripped_pmt)\n        \n        # Forward\
+      \ the stripped PDU to output\n        self.message_port_pub(pmt.intern('pdu_out'),\
+      \ new_pdu)\n"
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+  states:
+    _io_cache: ('pdu_header_stripper', 'pdu_header_stripper', [], [('pdu_in', 'message',
+      1)], [('pdu_out', 'message', 1)], '\n    Strips header bytes from PDU packets.\n    Removes
+      bytes at positions 0, 1, 4, 5 (0-indexed)\n    Keeps bytes at positions 2, 3,
+      and all bytes from position 6 onwards\n    ', [])
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [352, 2256.0]
+    rotation: 180
+    state: enabled
+- name: epy_block_2
+  id: epy_block
+  parameters:
+    _source_code: "import time\nimport numpy as np\nfrom gnuradio import gr\nimport\
+      \ pmt\n\nclass ack_generator(gr.basic_block):\n    \"\"\"\n    ACK Generator\
+      \ Block\n    - Input: PDU with [RxAddr(2B), TxAddr(2B), SeqNum(2B)]\n    - Output:\
+      \ ACK PDU with [DstAddr(2B), SrcAddr(2B), SeqNum(2B), ACK flag(1B)]\n    - Behavior:\
+      \ Repeats ACK until next Data PDU arrives\n    \"\"\"\n\n    def __init__(self,\
+      \ repeat_interval_ms=10):\n        gr.basic_block.__init__(self,\n         \
+      \   name=\"ack_generator\",\n            in_sig=None,\n            out_sig=None)\n\
+      \n        # Register ports\n        self.message_port_register_in(pmt.intern(\"\
+      data_in\"))\n        self.message_port_register_out(pmt.intern(\"ack_out\"))\n\
+      \n        # State\n        self.repeat_interval = repeat_interval_ms / 1000.0\n\
+      \        self.last_ack = None\n        self.last_time = time.time()\n\n    \
+      \    # Handler\n        self.set_msg_handler(pmt.intern(\"data_in\"), self.handle_data)\n\
+      \n    def handle_data(self, msg):\n        \"\"\"Handle incoming Data PDU and\
+      \ build ACK\"\"\"\n        blob = bytes(pmt.u8vector_elements(pmt.cdr(msg)))\n\
+      \n        # Extract fields\n        rx_addr = np.frombuffer(blob[0:2], dtype=np.uint8)\n\
+      \        tx_addr = np.frombuffer(blob[2:4], dtype=np.uint8)\n        seq_num\
+      \ = np.frombuffer(blob[4:6], dtype=np.uint8)\n        ack_flag = np.array([1],\
+      \ dtype=np.uint8)\n\n        # Build ACK packet: dst_addr + src_addr + seq_num\
+      \ + ack_flag\n        ack = np.concatenate([rx_addr, tx_addr, seq_num, ack_flag])\n\
+      \n        # Store ACK and reset timer\n        self.last_ack = ack\n       \
+      \ self.last_time = time.time()\n\n        # Immediately publish first ACK\n\
+      \        self.publish_ack()\n\n    def publish_ack(self):\n        \"\"\"Publish\
+      \ current ACK packet\"\"\"\n        if self.last_ack is not None:\n        \
+      \    pdu = pmt.cons(pmt.PMT_NIL,\n                           pmt.init_u8vector(len(self.last_ack),\n\
+      \                                             self.last_ack.tolist()))\n   \
+      \         self.message_port_pub(pmt.intern(\"ack_out\"), pdu)\n\n    def work(self,\
+      \ input_items, output_items):\n        \"\"\"Called repeatedly by GNU Radio\
+      \ scheduler\"\"\"\n        if self.last_ack is not None:\n            now =\
+      \ time.time()\n            if (now - self.last_time) >= self.repeat_interval:\n\
+      \                self.publish_ack()\n                self.last_time = now\n\
+      \        return 0\n\n"
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    repeat_interval_ms: 2e3
+  states:
+    _io_cache: '(''ack_generator'', ''ack_generator'', [(''repeat_interval_ms'', ''10'')],
+      [(''data_in'', ''message'', 1)], [(''ack_out'', ''message'', 1)], ''\n    ACK
+      Generator Block\n    - Input: PDU with [RxAddr(2B), TxAddr(2B), SeqNum(2B)]\n    -
+      Output: ACK PDU with [DstAddr(2B), SrcAddr(2B), SeqNum(2B), ACK flag(1B)]\n    -
+      Behavior: Repeats ACK until next Data PDU arrives\n    '', [])'
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [240, 1992.0]
+    rotation: 180
+    state: enabled
+- name: epy_block_3_0
+  id: epy_block
+  parameters:
+    _source_code: "import time\nimport threading\nfrom gnuradio import gr\nimport\
+      \ pmt\n\nclass packet_retransmission_arq(gr.basic_block):\n\n    def __init__(self,\n\
+      \                 src_addr=0x0102,\n                 max_payload=46,\n     \
+      \            preamble_retrans_limit=5,\n                 msg_retrans_limit=5,\n\
+      \                 postfiller_retrans_limit=5,\n                 retrans_interval_ms=500):\n\
+      \n        gr.basic_block.__init__(\n            self,\n            name='ARQ\
+      \ Packet Retransmission (Continuous Timer)',\n            in_sig=None,\n   \
+      \         out_sig=None\n        )\n\n        # ---------------- Parameters ----------------\n\
+      \        self.src_addr = int(src_addr) & 0xFFFF\n        self.dest_addr = 0x0304\n\
+      \        self.max_payload = max(1, int(max_payload))\n\n        self.preamble_retrans_limit\
+      \ = max(1, int(preamble_retrans_limit))\n        self.msg_retrans_limit = max(1,\
+      \ int(msg_retrans_limit))\n        self.postfiller_retrans_limit = max(1, int(postfiller_retrans_limit))\n\
+      \        self.retrans_interval_ms = max(10, int(retrans_interval_ms))\n\n  \
+      \      # ---------------- ARQ State ----------------\n        self.packet_queue\
+      \ = []\n        self.message_queue = []       # store all incoming messages\n\
+      \        self.current_message = None\n        self.current_packet_idx = 0\n\
+      \        self.current_seq_num = None\n        self.current_packet_retrans_limit\
+      \ = 0\n        self.retrans_count = 0\n        self.waiting_for_ack = False\n\
+      \        self.transmission_active = False\n        self.total_packets = 0\n\n\
+      \        # ---------------- Patterns ----------------\n        self.preamble_pattern\
+      \ = bytes([85] * 44)\n        self.postfiller = bytes([37] + [85] * 47 + [35,\
+      \ 69, 79, 70])\n\n        # ---------------- Ports ----------------\n      \
+      \  self.message_port_register_in(pmt.intern(\"msg_in\"))\n        self.message_port_register_in(pmt.intern(\"\
+      ack_in\"))\n        self.message_port_register_in(pmt.intern(\"dest_addr_in\"\
+      ))\n        self.message_port_register_in(pmt.intern(\"reset_in\"))\n\n    \
+      \    self.message_port_register_out(pmt.intern(\"packet_out\"))\n        self.message_port_register_out(pmt.intern(\"\
+      packet_count_out\"))\n        self.message_port_register_out(pmt.intern(\"status_out\"\
+      ))\n\n        # ---------------- Handlers ----------------\n        self.set_msg_handler(pmt.intern(\"\
+      msg_in\"), self.handle_message)\n        self.set_msg_handler(pmt.intern(\"\
+      ack_in\"), self.handle_ack)\n        self.set_msg_handler(pmt.intern(\"dest_addr_in\"\
+      ), self.handle_dest_addr)\n        self.set_msg_handler(pmt.intern(\"reset_in\"\
+      ), self.handle_reset)\n\n        self._start_retransmit_thread()\n\n    # ===========================================================\n\
+      \    # PMT\n    # ===========================================================\n\
+      \    def _pmt_to_bytes(self, pmt_msg):\n        try:\n            vec = pmt.cdr(pmt_msg)\
+      \ if pmt.is_pair(pmt_msg) else pmt_msg\n            if pmt.is_u8vector(vec):\n\
+      \                return bytes(pmt.u8vector_elements(vec))\n            elif\
+      \ pmt.is_string(vec):\n                return pmt.to_python(vec).encode('utf-8')\n\
+      \            return b''\n        except:\n            return b''\n\n    def\
+      \ _pmt_to_int(self, msg):\n        try:\n            if pmt.is_integer(msg):\n\
+      \                return pmt.to_long(msg)\n            b = self._pmt_to_bytes(msg)\n\
+      \            if len(b) == 1:\n                return b[0]\n            if len(b)\
+      \ >= 2:\n                return (b[0] << 8) | b[1]\n            return None\n\
+      \        except:\n            return None\n\n    # ===========================================================\n\
+      \    # MESSAGE HANDLERS\n    # ===========================================================\n\
+      \    def handle_dest_addr(self, msg):\n        i = self._pmt_to_int(msg)\n \
+      \       if i is not None:\n            self.dest_addr = int(i) & 0xFFFF\n\n\
+      \    # STORE ALL MESSAGES (never discard)\n    def handle_message(self, msg):\n\
+      \        payload_bytes = self._pmt_to_bytes(msg) or b''\n        self.message_queue.append(payload_bytes)\n\
+      \n        # Auto-start transmission if idle\n        if not self.transmission_active:\n\
+      \            self._load_next_message()\n\n    # RESET = clear ARQ state AND\
+      \ start next stored message\n    def handle_reset(self, msg):\n\n        # FULL\
+      \ ARQ RESET (but DO NOT clear message_queue)\n        self.packet_queue = []\n\
+      \        self.current_message = None\n        self.current_packet_idx = 0\n\
+      \        self.current_seq_num = None\n        self.waiting_for_ack = False\n\
+      \        self.transmission_active = False\n        self.retrans_count = 0\n\n\
+      \        # Send next stored message\n        self._load_next_message()\n\n \
+      \   # ACK HANDLING\n    def handle_ack(self, msg):\n        if not self.transmission_active:\n\
+      \            return\n\n        ack_bytes = self._pmt_to_bytes(msg)\n       \
+      \ if len(ack_bytes) < 6:\n            return\n\n        ack_seq = (ack_bytes[4]\
+      \ << 8) | ack_bytes[5]\n\n        if ack_seq == self.current_seq_num:\n\n  \
+      \          self.waiting_for_ack = False\n            self.retrans_count = 0\n\
+      \            self.current_packet_idx += 1\n\n            if self.current_packet_idx\
+      \ >= len(self.packet_queue):\n                self.transmission_active = False\n\
+      \                self.message_port_pub(pmt.intern(\"status_out\"), pmt.from_long(1))\n\
+      \n                # Auto-load next stored message\n                self._load_next_message()\n\
+      \            else:\n                self._send_packet()\n\n    # ===========================================================\n\
+      \    # PACKET LOGIC\n    # ===========================================================\n\
+      \    def _load_next_message(self):\n        if len(self.message_queue) == 0:\n\
+      \            return\n\n        self.current_message = self.message_queue.pop(0)\n\
+      \        self._prepare_packet_queue(self.current_message)\n\n        self.current_packet_idx\
+      \ = 0\n        self.retrans_count = 0\n        self.transmission_active = True\n\
+      \n        self.message_port_pub(\n            pmt.intern(\"packet_count_out\"\
+      ),\n            pmt.from_long(self.total_packets)\n        )\n\n        self._send_packet()\n\
+      \n    def _prepare_packet_queue(self, payload_bytes):\n        self.packet_queue\
+      \ = []\n        seq = 0\n\n        # PREAMBLE\n        self.packet_queue.append({\n\
+      \            'seq': seq,\n            'payload': self.preamble_pattern,\n  \
+      \          'type': 'PREAMBLE',\n            'retrans_limit': self.preamble_retrans_limit\n\
+      \        })\n        seq += 1\n\n        # MESSAGE CHUNKS\n        offset =\
+      \ 0\n        msg_idx = 0\n        while offset < len(payload_bytes):\n     \
+      \       chunk = payload_bytes[offset:offset+self.max_payload]\n            self.packet_queue.append({\n\
+      \                'seq': seq,\n                'payload': bytes(chunk),\n   \
+      \             'type': f'MESSAGE_{msg_idx}',\n                'retrans_limit':\
+      \ self.msg_retrans_limit\n            })\n            seq += 1\n           \
+      \ offset += self.max_payload\n            msg_idx += 1\n\n        # POSTFILLER\n\
+      \        self.packet_queue.append({\n            'seq': seq,\n            'payload':\
+      \ self.postfiller,\n            'type': 'POSTFILLER',\n            'retrans_limit':\
+      \ self.postfiller_retrans_limit\n        })\n\n        self.total_packets =\
+      \ len(self.packet_queue)\n\n    def _build_packet_bytes(self, pkt):\n      \
+      \  seq = int(pkt['seq']) & 0xFFFF\n        payload = pkt['payload'] or b''\n\
+      \n        b = bytearray()\n        b.append((self.dest_addr >> 8) & 0xFF)\n\
+      \        b.append(self.dest_addr & 0xFF)\n        b.append((self.src_addr >>\
+      \ 8) & 0xFF)\n        b.append(self.src_addr & 0xFF)\n        b.append((seq\
+      \ >> 8) & 0xFF)\n        b.append(seq & 0xFF)\n        b.extend(payload)\n \
+      \       return bytes(b)\n\n    def _send_packet(self):\n        if not self.transmission_active:\n\
+      \            return\n        if self.current_packet_idx >= len(self.packet_queue):\n\
+      \            return\n\n        pkt = self.packet_queue[self.current_packet_idx]\n\
+      \        pkt_bytes = self._build_packet_bytes(pkt)\n\n        self.current_seq_num\
+      \ = pkt['seq']\n        self.current_packet_retrans_limit = pkt['retrans_limit']\n\
+      \n        pdu = pmt.cons(\n            pmt.PMT_NIL,\n            pmt.init_u8vector(len(pkt_bytes),\
+      \ list(pkt_bytes))\n        )\n\n        self.message_port_pub(pmt.intern(\"\
+      packet_out\"), pdu)\n        self.waiting_for_ack = True\n\n    # ===========================================================\n\
+      \    # RETRANSMISSION LOOP\n    # ===========================================================\n\
+      \    def _start_retransmit_thread(self):\n        def loop():\n            while\
+      \ True:\n                time.sleep(self.retrans_interval_ms / 1000.0)\n\n \
+      \               if not self.transmission_active:\n                    continue\n\
+      \                if not self.waiting_for_ack:\n                    continue\n\
+      \n                self.retrans_count += 1\n\n                if self.retrans_count\
+      \ > self.current_packet_retrans_limit:\n                    # Skip to next packet\n\
+      \                    self.waiting_for_ack = False\n                    self.retrans_count\
+      \ = 0\n                    self.current_packet_idx += 1\n\n                \
+      \    if self.current_packet_idx >= len(self.packet_queue):\n               \
+      \         self.transmission_active = False\n                        self.message_port_pub(\n\
+      \                            pmt.intern(\"status_out\"),\n                 \
+      \           pmt.from_long(1)\n                        )\n                  \
+      \      self._load_next_message()\n                    else:\n              \
+      \          self._send_packet()\n\n                else:\n                  \
+      \  self._send_packet()\n\n        threading.Thread(target=loop, daemon=True).start()\n"
+    affinity: ''
+    alias: ''
+    comment: ''
+    max_payload: '120'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    msg_retrans_limit: '50'
+    postfiller_retrans_limit: '50'
+    preamble_retrans_limit: '60'
+    retrans_interval_ms: '0.1'
+    src_addr: src_address
+  states:
+    _io_cache: ('ARQ Packet Retransmission (Continuous Timer)', 'packet_retransmission_arq',
+      [('src_addr', '258'), ('max_payload', '46'), ('preamble_retrans_limit', '5'),
+      ('msg_retrans_limit', '5'), ('postfiller_retrans_limit', '5'), ('retrans_interval_ms',
+      '500')], [('dest_addr_in', 'message', 1), ('reset_in', 'message', 1), ('msg_in',
+      'message', 1), ('ack_in', 'message', 1)], [('status_out', 'message', 1), ('packet_count_out',
+      'message', 1), ('packet_out', 'message', 1)], '', ['max_payload', 'msg_retrans_limit',
+      'postfiller_retrans_limit', 'preamble_retrans_limit', 'retrans_interval_ms',
+      'src_addr'])
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [496, 208.0]
+    rotation: 0
+    state: enabled
+- name: epy_block_4_0
+  id: epy_block
+  parameters:
+    _source_code: "import pmt\nfrom gnuradio import gr\nfrom PyQt5 import QtWidgets,\
+      \ QtCore, QtGui\nimport sys\nimport json\nimport os\nfrom datetime import datetime\n\
+      \nclass comm_gui(gr.basic_block):\n    \"\"\"\n    PyQt5-based Messaging App\
+      \ GUI for GNU Radio\n    -------------------------------------------\n    Modern\
+      \ chat-style interface with contact management\n\n    Inputs:\n    1) status_in:\
+      \ Status (1 byte: 0=error, 1=success)\n    2) msg_in: Received message\n\n \
+      \   Outputs:\n    1) addr_out: 2-byte destination address\n    2) msg_out: Message\
+      \ to send\n    \"\"\"\n\n    def __init__(self):\n        gr.basic_block.__init__(self,\n\
+      \            name=\"comm_gui\",\n            in_sig=None,\n            out_sig=None)\n\
+      \n        # Register ports\n        self.message_port_register_in(pmt.intern(\"\
+      status_in\"))\n        self.message_port_register_in(pmt.intern(\"msg_in\"))\n\
+      \        self.message_port_register_out(pmt.intern(\"addr_out\"))\n        self.message_port_register_out(pmt.intern(\"\
+      msg_out\"))\n\n        # Bind handlers\n        self.set_msg_handler(pmt.intern(\"\
+      status_in\"), self.handle_status)\n        self.set_msg_handler(pmt.intern(\"\
+      msg_in\"), self.handle_message)\n\n        # Create GUI\n        self.app =\
+      \ QtWidgets.QApplication.instance()\n        if self.app is None:\n        \
+      \    self.app = QtWidgets.QApplication(sys.argv)\n\n        self.window = MessagingWindow(self)\n\
+      \        self.window.show()\n\n    def handle_status(self, msg):\n        \"\
+      \"\"Handle status input\"\"\"\n        if pmt.is_pair(msg):\n            data\
+      \ = pmt.cdr(msg)\n            data_list = pmt.u8vector_elements(data)\n    \
+      \        if data_list:\n                status = data_list[0] == 1\n       \
+      \         QtCore.QMetaObject.invokeMethod(\n                    self.window,\n\
+      \                    \"update_status\",\n                    QtCore.Qt.QueuedConnection,\n\
+      \                    QtCore.Q_ARG(bool, status)\n                )\n\n    def\
+      \ handle_message(self, msg):\n        \"\"\"Handle received message\"\"\"\n\
+      \        if pmt.is_pair(msg):\n            data = pmt.cdr(msg)\n           \
+      \ data_list = pmt.u8vector_elements(data)\n            packet_bytes = bytes(data_list)\n\
+      \n            if len(packet_bytes) >= 2:\n                addr_hex = packet_bytes[0:2].hex().upper()\n\
+      \                message = packet_bytes[2:].decode('utf-8', errors='replace')\n\
+      \                QtCore.QMetaObject.invokeMethod(\n                    self.window,\n\
+      \                    \"receive_message\",\n                    QtCore.Qt.QueuedConnection,\n\
+      \                    QtCore.Q_ARG(str, addr_hex),\n                    QtCore.Q_ARG(str,\
+      \ message)\n                )\n\n    def send_message(self, addr_str, message):\n\
+      \        \"\"\"Send message from GUI\"\"\"\n        try:\n            # Output\
+      \ address\n            addr_bytes = bytes.fromhex(addr_str)\n            addr_pmt\
+      \ = pmt.cons(\n                pmt.PMT_NIL,\n                pmt.init_u8vector(len(addr_bytes),\
+      \ list(addr_bytes))\n            )\n            self.message_port_pub(pmt.intern(\"\
+      addr_out\"), addr_pmt)\n\n            # Output message\n            msg_bytes\
+      \ = message.encode('utf-8')\n            msg_pmt = pmt.cons(\n             \
+      \   pmt.PMT_NIL,\n                pmt.init_u8vector(len(msg_bytes), list(msg_bytes))\n\
+      \            )\n            self.message_port_pub(pmt.intern(\"msg_out\"), msg_pmt)\n\
+      \n            return True\n        except Exception as e:\n            print(f\"\
+      [Error] {e}\")\n            return False\n\n    def work(self, input_items,\
+      \ output_items):\n        return 0\n\n\nclass Contact:\n    \"\"\"Contact data\
+      \ class\"\"\"\n    def __init__(self, name, address, color=\"#4A90E2\"):\n \
+      \       self.name = name\n        self.address = address.upper()\n        self.color\
+      \ = color\n        self.unread_count = 0\n        self.last_message_time = None\n\
+      \        self.button_widget = None\n        self.badge_widget = None\n     \
+      \   self.avatar_widget = None\n\n\nclass ToastNotification(QtWidgets.QWidget):\n\
+      \    \"\"\"Toast notification widget\"\"\"\n    def __init__(self, message,\
+      \ parent=None, duration=3000):\n        super().__init__(parent)\n\n       \
+      \ # Set window flags with error handling\n        try:\n            flags =\
+      \ QtCore.Qt.FramelessWindowHint | QtCore.Qt.Tool\n            if hasattr(QtCore.Qt,\
+      \ 'StaysOnTopHint'):\n                flags |= QtCore.Qt.StaysOnTopHint\n  \
+      \          self.setWindowFlags(flags)\n            self.setAttribute(QtCore.Qt.WA_TranslucentBackground)\n\
+      \        except Exception:\n            pass\n\n        layout = QtWidgets.QVBoxLayout(self)\n\
+      \        layout.setContentsMargins(0, 0, 0, 0)\n\n        label = QtWidgets.QLabel(message)\n\
+      \        label.setAlignment(QtCore.Qt.AlignCenter)\n        label.setStyleSheet(\"\
+      \"\"\n            QLabel {\n                background-color: #2C3E50;\n   \
+      \             color: white;\n                padding: 12px 24px;\n         \
+      \       border-radius: 6px;\n                font-size: 13px;\n            \
+      \    font-weight: bold;\n            }\n        \"\"\")\n        layout.addWidget(label)\n\
+      \n        self.timer = QtCore.QTimer()\n        self.timer.timeout.connect(self.close_toast)\n\
+      \        self.timer.setSingleShot(True)\n        self.timer.start(duration)\n\
+      \n    def close_toast(self):\n        \"\"\"Close toast notification safely\"\
+      \"\"\n        try:\n            self.close()\n            self.deleteLater()\n\
+      \        except:\n            pass\n\n    def showNotification(self):\n    \
+      \    \"\"\"Show notification at bottom center\"\"\"\n        try:\n        \
+      \    screen = QtGui.QGuiApplication.primaryScreen()\n            if screen:\n\
+      \                geom = screen.geometry()\n                x = geom.width()\
+      \ // 2 - self.width() // 2\n                y = geom.height() - 100\n      \
+      \          self.move(x, y)\n\n            self.show()\n            self.raise_()\n\
+      \            # Skip activateWindow on Wayland to avoid warnings\n          \
+      \  if os.environ.get('WAYLAND_DISPLAY') is None:\n                try:\n   \
+      \                 self.activateWindow()\n                except Exception:\n\
+      \                    pass\n        except Exception:\n            pass\n\n\n\
+      class MessagingWindow(QtWidgets.QMainWindow):\n    \"\"\"Modern messaging app\
+      \ window with status tags under sent messages\"\"\"\n\n    def __init__(self,\
+      \ block):\n        super().__init__()\n        self.block = block\n        self.contacts\
+      \ = {}\n        self.current_contact = None\n        # chat_history[address]\
+      \ = list of {timestamp, is_sent, message, delivery}\n        # delivery: None\
+      \ (pending), True (delivered), False (failed)\n        self.chat_history = {}\n\
+      \        self.contacts_file = 'radio_contacts.json'\n        self.history_file\
+      \ = 'radio_history.json'\n\n        # Runtime map to track status QLabel for\
+      \ pending sent messages:\n        # pending_map[address] = list of QLabel (order\
+      \ of sent messages)\n        self.pending_map = {}\n\n        self.load_contacts()\n\
+      \        self.load_chat_history()\n        self.init_ui()\n        # Render\
+      \ contacts after UI init\n        for address in sorted(self.contacts.keys()):\n\
+      \            self.add_contact_item(self.contacts[address])\n\n    # =================\
+      \ UI INIT =================\n    def init_ui(self):\n        \"\"\"Initialize\
+      \ modern messaging UI\"\"\"\n        self.setWindowTitle(\"User2\")\n      \
+      \  self.setGeometry(100, 100, 1200, 750)\n        self.setStyleSheet(\"\"\"\n\
+      \            QMainWindow {\n                background-color: #F5F6FA;\n   \
+      \         }\n        \"\"\")\n\n        # Main container\n        central =\
+      \ QtWidgets.QWidget()\n        self.setCentralWidget(central)\n        main_layout\
+      \ = QtWidgets.QHBoxLayout(central)\n        main_layout.setContentsMargins(0,\
+      \ 0, 0, 0)\n        main_layout.setSpacing(0)\n\n        # Left sidebar (Contacts)\n\
+      \        self.setup_sidebar(main_layout)\n\n        # Right side (Chat area)\n\
+      \        self.setup_chat_area(main_layout)\n\n        # Status bar\n       \
+      \ self.statusBar().showMessage(\"Ready\")\n        self.statusBar().setStyleSheet(\"\
+      background-color: white; color: #2C3E50;\")\n\n    def setup_sidebar(self, parent_layout):\n\
+      \        \"\"\"Setup contacts sidebar\"\"\"\n        sidebar = QtWidgets.QWidget()\n\
+      \        sidebar.setFixedWidth(300)\n        sidebar.setStyleSheet(\"\"\"\n\
+      \            QWidget {\n                background-color: #2C3E50;\n       \
+      \         color: white;\n            }\n        \"\"\")\n\n        sidebar_layout\
+      \ = QtWidgets.QVBoxLayout(sidebar)\n        sidebar_layout.setContentsMargins(0,\
+      \ 0, 0, 0)\n        sidebar_layout.setSpacing(0)\n\n        # Header\n     \
+      \   header = QtWidgets.QWidget()\n        header.setStyleSheet(\"background-color:\
+      \ #1A252F; padding: 20px;\")\n        header_layout = QtWidgets.QVBoxLayout(header)\n\
+      \        header_layout.setSpacing(12)\n\n        title = QtWidgets.QLabel(\"\
+      Radio Messenger\")\n        title.setStyleSheet(\"font-size: 20px; font-weight:\
+      \ bold; color: white;\")\n        header_layout.addWidget(title)\n\n       \
+      \ # Search bar\n        self.search_input = QtWidgets.QLineEdit()\n        self.search_input.setPlaceholderText(\"\
+      \U0001F50D Search contacts...\")\n        self.search_input.setStyleSheet(\"\
+      \"\"\n            QLineEdit {\n                background-color: #34495E;\n\
+      \                border: 1px solid #475569;\n                border-radius:\
+      \ 6px;\n                padding: 8px 12px;\n                color: white;\n\
+      \                font-size: 12px;\n            }\n            QLineEdit:focus\
+      \ {\n                border: 2px solid #3498DB;\n                background-color:\
+      \ #3A4F63;\n            }\n            QLineEdit::placeholder {\n          \
+      \      color: #95A5A6;\n            }\n        \"\"\")\n        self.search_input.textChanged.connect(self.filter_contacts)\n\
+      \        header_layout.addWidget(self.search_input)\n\n        # Add contact\
+      \ button\n        add_btn = QtWidgets.QPushButton(\"\u2795 Add Contact\")\n\
+      \        add_btn.setStyleSheet(\"\"\"\n            QPushButton {\n         \
+      \       background-color: #3498DB;\n                color: white;\n        \
+      \        border: none;\n                padding: 10px;\n                border-radius:\
+      \ 6px;\n                font-weight: bold;\n                font-size: 13px;\n\
+      \            }\n            QPushButton:hover {\n                background-color:\
+      \ #2980B9;\n            }\n            QPushButton:pressed {\n             \
+      \   background-color: #21618C;\n            }\n        \"\"\")\n        add_btn.setCursor(QtCore.Qt.PointingHandCursor)\n\
+      \        add_btn.clicked.connect(self.add_contact_dialog)\n        header_layout.addWidget(add_btn)\n\
+      \n        sidebar_layout.addWidget(header)\n\n        # Contacts list\n    \
+      \    scroll = QtWidgets.QScrollArea()\n        scroll.setWidgetResizable(True)\n\
+      \        scroll.setStyleSheet(\"\"\"\n            QScrollArea {\n          \
+      \      border: none;\n                background-color: #2C3E50;\n         \
+      \   }\n            QScrollBar:vertical {\n                background-color:\
+      \ #2C3E50;\n                width: 10px;\n            }\n            QScrollBar::handle:vertical\
+      \ {\n                background-color: #34495E;\n                border-radius:\
+      \ 5px;\n                min-height: 20px;\n            }\n            QScrollBar::handle:vertical:hover\
+      \ {\n                background-color: #425A74;\n            }\n        \"\"\
+      \")\n\n        self.contacts_widget = QtWidgets.QWidget()\n        self.contacts_layout\
+      \ = QtWidgets.QVBoxLayout(self.contacts_widget)\n        self.contacts_layout.setContentsMargins(8,\
+      \ 8, 8, 8)\n        self.contacts_layout.setSpacing(6)\n        self.contacts_layout.addStretch()\n\
+      \n        scroll.setWidget(self.contacts_widget)\n        sidebar_layout.addWidget(scroll)\n\
+      \n        parent_layout.addWidget(sidebar)\n\n    def setup_chat_area(self,\
+      \ parent_layout):\n        \"\"\"Setup main chat area\"\"\"\n        chat_container\
+      \ = QtWidgets.QWidget()\n        chat_container.setStyleSheet(\"background-color:\
+      \ #F5F6FA;\")\n        chat_layout = QtWidgets.QVBoxLayout(chat_container)\n\
+      \        chat_layout.setContentsMargins(0, 0, 0, 0)\n        chat_layout.setSpacing(0)\n\
+      \n        # Chat header\n        self.chat_header = QtWidgets.QWidget()\n  \
+      \      self.chat_header.setStyleSheet(\"\"\"\n            QWidget {\n      \
+      \          background-color: white;\n                border-bottom: 2px solid\
+      \ #E8EAED;\n            }\n        \"\"\")\n        header_layout = QtWidgets.QHBoxLayout(self.chat_header)\n\
+      \        header_layout.setContentsMargins(20, 15, 20, 15)\n        header_layout.setSpacing(15)\n\
+      \n        # Avatar for selected contact\n        self.header_avatar = QtWidgets.QLabel()\n\
+      \        self.header_avatar.setFixedSize(45, 45)\n        self.header_avatar.setAlignment(QtCore.Qt.AlignCenter)\n\
+      \        self.header_avatar.setStyleSheet(\"\"\"\n            background-color:\
+      \ #E0E0E0;\n            color: white;\n            border-radius: 22px;\n  \
+      \          font-size: 18px;\n            font-weight: bold;\n        \"\"\"\
+      )\n        self.header_avatar.hide()\n        header_layout.addWidget(self.header_avatar)\n\
+      \n        # Title and status\n        title_layout = QtWidgets.QVBoxLayout()\n\
+      \        title_layout.setSpacing(2)\n\n        self.chat_title = QtWidgets.QLabel(\"\
+      Select a contact to start messaging\")\n        self.chat_title.setStyleSheet(\"\
+      font-size: 16px; font-weight: bold; color: #2C3E50;\")\n        title_layout.addWidget(self.chat_title)\n\
+      \n        status_layout = QtWidgets.QHBoxLayout()\n        self.status_indicator\
+      \ = QtWidgets.QLabel(\"\u25CF\")\n        self.status_indicator.setStyleSheet(\"\
+      color: #95A5A6; font-size: 12px;\")\n        status_layout.addWidget(self.status_indicator)\n\
+      \n        self.status_text = QtWidgets.QLabel(\"Ready\")\n        self.status_text.setStyleSheet(\"\
+      color: #7F8C8D; font-size: 12px;\")\n        status_layout.addWidget(self.status_text)\n\
+      \        title_layout.addLayout(status_layout)\n\n        header_layout.addLayout(title_layout)\n\
+      \        header_layout.addStretch()\n\n        # Contact options button\n  \
+      \      self.contact_menu_btn = QtWidgets.QPushButton(\"\u22EE\")\n        self.contact_menu_btn.setFixedSize(40,\
+      \ 40)\n        self.contact_menu_btn.setStyleSheet(\"\"\"\n            QPushButton\
+      \ {\n                background-color: transparent;\n                border:\
+      \ none;\n                font-size: 18px;\n                color: #2C3E50;\n\
+      \            }\n            QPushButton:hover {\n                background-color:\
+      \ #F0F0F0;\n                border-radius: 6px;\n            }\n        \"\"\
+      \")\n        self.contact_menu_btn.setCursor(QtCore.Qt.PointingHandCursor)\n\
+      \        self.contact_menu_btn.clicked.connect(self.show_contact_menu)\n   \
+      \     self.contact_menu_btn.hide()\n        header_layout.addWidget(self.contact_menu_btn)\n\
+      \n        chat_layout.addWidget(self.chat_header)\n\n        # Messages area\n\
+      \        self.messages_scroll = QtWidgets.QScrollArea()\n        self.messages_scroll.setWidgetResizable(True)\n\
+      \        self.messages_scroll.setStyleSheet(\"\"\"\n            QScrollArea\
+      \ {\n                border: none;\n                background-color: #F5F6FA;\n\
+      \            }\n            QScrollBar:vertical {\n                background-color:\
+      \ #F5F6FA;\n                width: 10px;\n            }\n            QScrollBar::handle:vertical\
+      \ {\n                background-color: #D0D0D0;\n                border-radius:\
+      \ 5px;\n                min-height: 20px;\n            }\n        \"\"\")\n\n\
+      \        self.messages_widget = QtWidgets.QWidget()\n        self.messages_layout\
+      \ = QtWidgets.QVBoxLayout(self.messages_widget)\n        self.messages_layout.setContentsMargins(20,\
+      \ 20, 20, 20)\n        self.messages_layout.setSpacing(10)\n        self.messages_layout.addStretch()\n\
+      \n        self.messages_scroll.setWidget(self.messages_widget)\n        chat_layout.addWidget(self.messages_scroll)\n\
+      \n        # Input area\n        input_container = QtWidgets.QWidget()\n    \
+      \    input_container.setStyleSheet(\"\"\"\n            QWidget {\n         \
+      \       background-color: white;\n                border-top: 2px solid #E8EAED;\n\
+      \            }\n        \"\"\")\n        input_layout = QtWidgets.QHBoxLayout(input_container)\n\
+      \        input_layout.setContentsMargins(20, 15, 20, 15)\n        input_layout.setSpacing(12)\n\
+      \n        self.message_input = QtWidgets.QLineEdit()\n        self.message_input.setPlaceholderText(\"\
+      Type a message...\")\n        self.message_input.setMinimumHeight(40)\n    \
+      \    self.message_input.setStyleSheet(\"\"\"\n            QLineEdit {\n    \
+      \            border: 2px solid #E8EAED;\n                border-radius: 20px;\n\
+      \                padding: 10px 15px;\n                font-size: 14px;\n   \
+      \             background-color: #F8F9FA;\n                color: #2C3E50;\n\
+      \            }\n            QLineEdit:focus {\n                border: 2px solid\
+      \ #3498DB;\n                background-color: white;\n            }\n      \
+      \      QLineEdit::placeholder {\n                color: #B0BEC5;\n         \
+      \   }\n        \"\"\")\n        self.message_input.returnPressed.connect(self.send_message)\n\
+      \        self.message_input.setEnabled(False)\n        input_layout.addWidget(self.message_input)\n\
+      \n        self.send_btn = QtWidgets.QPushButton(\"Send\")\n        self.send_btn.setMinimumHeight(40)\n\
+      \        self.send_btn.setMinimumWidth(80)\n        self.send_btn.setStyleSheet(\"\
+      \"\"\n            QPushButton {\n                background-color: #3498DB;\n\
+      \                color: white;\n                border: none;\n            \
+      \    border-radius: 20px;\n                padding: 10px 30px;\n           \
+      \     font-weight: bold;\n                font-size: 14px;\n            }\n\
+      \            QPushButton:hover {\n                background-color: #2980B9;\n\
+      \            }\n            QPushButton:pressed {\n                background-color:\
+      \ #21618C;\n            }\n            QPushButton:disabled {\n            \
+      \    background-color: #BDC3C7;\n            }\n        \"\"\")\n        self.send_btn.setCursor(QtCore.Qt.PointingHandCursor)\n\
+      \        self.send_btn.clicked.connect(self.send_message)\n        self.send_btn.setEnabled(False)\n\
+      \        input_layout.addWidget(self.send_btn)\n\n        chat_layout.addWidget(input_container)\n\
+      \n        parent_layout.addWidget(chat_container)\n\n    # =================\
+      \ CONTACTS =================\n    def add_contact_dialog(self):\n        \"\"\
+      \"Show enhanced dialog to add new contact\"\"\"\n        dialog = QtWidgets.QDialog(self)\n\
+      \        dialog.setWindowTitle(\"Add New Contact\")\n        dialog.setModal(True)\n\
+      \        dialog.setFixedSize(450, 300)\n        dialog.setStyleSheet(\"\"\"\n\
+      \            QDialog {\n                background-color: white;\n         \
+      \   }\n        \"\"\")\n\n        layout = QtWidgets.QVBoxLayout(dialog)\n \
+      \       layout.setSpacing(15)\n        layout.setContentsMargins(25, 25, 25,\
+      \ 25)\n\n        # Title\n        title = QtWidgets.QLabel(\"Add New Contact\"\
+      )\n        title.setStyleSheet(\"font-size: 16px; font-weight: bold; color:\
+      \ #2C3E50;\")\n        layout.addWidget(title)\n\n        # Form layout\n  \
+      \      form_layout = QtWidgets.QFormLayout()\n        form_layout.setSpacing(12)\n\
+      \        form_layout.setLabelAlignment(QtCore.Qt.AlignLeft)\n\n        # Name\
+      \ input\n        name_label = QtWidgets.QLabel(\"Contact Name:\")\n        name_label.setStyleSheet(\"\
+      font-weight: bold; color: #34495E;\")\n        name_input = QtWidgets.QLineEdit()\n\
+      \        name_input.setPlaceholderText(\"e.g., Alice, Bob\")\n        name_input.setStyleSheet(\"\
+      \"\"\n            QLineEdit {\n                border: 2px solid #E8EAED;\n\
+      \                border-radius: 6px;\n                padding: 8px 12px;\n \
+      \               font-size: 13px;\n                background-color: #F8F9FA;\n\
+      \            }\n            QLineEdit:focus {\n                border: 2px solid\
+      \ #3498DB;\n                background-color: white;\n            }\n      \
+      \  \"\"\")\n        name_input.setMinimumHeight(35)\n        form_layout.addRow(name_label,\
+      \ name_input)\n\n        # Address input with validation\n        addr_label\
+      \ = QtWidgets.QLabel(\"Hex Address:\")\n        addr_label.setStyleSheet(\"\
+      font-weight: bold; color: #34495E;\")\n        addr_input = QtWidgets.QLineEdit()\n\
+      \        addr_input.setPlaceholderText(\"e.g., 0102, ABCD\")\n        addr_input.setMaxLength(4)\n\
+      \        addr_input.setStyleSheet(\"\"\"\n            QLineEdit {\n        \
+      \        border: 2px solid #E8EAED;\n                border-radius: 6px;\n \
+      \               padding: 8px 12px;\n                font-size: 13px;\n     \
+      \           background-color: #F8F9FA;\n                font-family: monospace;\n\
+      \            }\n            QLineEdit:focus {\n                border: 2px solid\
+      \ #3498DB;\n                background-color: white;\n            }\n      \
+      \  \"\"\")\n        addr_input.setMinimumHeight(35)\n        addr_input.textChanged.connect(lambda:\
+      \ self.validate_hex_input(addr_input))\n        form_layout.addRow(addr_label,\
+      \ addr_input)\n\n        # Validation message\n        validation_label = QtWidgets.QLabel()\n\
+      \        validation_label.setStyleSheet(\"color: #E74C3C; font-size: 11px;\"\
+      )\n        validation_label.hide()\n        form_layout.addRow(\"\", validation_label)\n\
+      \n        layout.addLayout(form_layout)\n        layout.addSpacing(10)\n\n \
+      \       # Error message display\n        error_label = QtWidgets.QLabel()\n\
+      \        error_label.setStyleSheet(\"color: #E74C3C; font-size: 12px; padding:\
+      \ 8px; background-color: #FADBD8; border-radius: 4px;\")\n        error_label.setWordWrap(True)\n\
+      \        error_label.hide()\n        layout.addWidget(error_label)\n\n     \
+      \   # Buttons\n        btn_layout = QtWidgets.QHBoxLayout()\n        btn_layout.addStretch()\n\
+      \n        cancel_btn = QtWidgets.QPushButton(\"Cancel\")\n        cancel_btn.setMinimumWidth(100)\n\
+      \        cancel_btn.setMinimumHeight(35)\n        cancel_btn.setStyleSheet(\"\
+      \"\"\n            QPushButton {\n                background-color: #ECF0F1;\n\
+      \                color: #2C3E50;\n                border: none;\n          \
+      \      border-radius: 6px;\n                font-weight: bold;\n           \
+      \     font-size: 13px;\n            }\n            QPushButton:hover {\n   \
+      \             background-color: #D5DBDB;\n            }\n        \"\"\")\n \
+      \       cancel_btn.setCursor(QtCore.Qt.PointingHandCursor)\n        cancel_btn.clicked.connect(dialog.reject)\n\
+      \        btn_layout.addWidget(cancel_btn)\n\n        add_btn = QtWidgets.QPushButton(\"\
+      Add Contact\")\n        add_btn.setMinimumWidth(120)\n        add_btn.setMinimumHeight(35)\n\
+      \        add_btn.setStyleSheet(\"\"\"\n            QPushButton {\n         \
+      \       background-color: #27AE60;\n                color: white;\n        \
+      \        border: none;\n                border-radius: 6px;\n              \
+      \  font-weight: bold;\n                font-size: 13px;\n            }\n   \
+      \         QPushButton:hover {\n                background-color: #229954;\n\
+      \            }\n            QPushButton:pressed {\n                background-color:\
+      \ #1E8449;\n            }\n        \"\"\")\n        add_btn.setCursor(QtCore.Qt.PointingHandCursor)\n\
+      \        add_btn.clicked.connect(lambda: self.add_contact(\n            name_input.text().strip(),\n\
+      \            addr_input.text().strip(),\n            dialog,\n            error_label\n\
+      \        ))\n        btn_layout.addWidget(add_btn)\n\n        layout.addLayout(btn_layout)\n\
+      \n        dialog.exec_()\n\n    def validate_hex_input(self, input_widget):\n\
+      \        \"\"\"Validate hexadecimal input in real-time\"\"\"\n        text =\
+      \ input_widget.text().upper()\n        input_widget.blockSignals(True)\n\n \
+      \       filtered = ''.join(c for c in text if c in '0123456789ABCDEF')\n   \
+      \     input_widget.setText(filtered)\n\n        input_widget.blockSignals(False)\n\
+      \n    def add_contact(self, name, address, dialog, error_label):\n        \"\
+      \"\"Add a new contact with validation\"\"\"\n        if not name:\n        \
+      \    error_label.setText(\"\u26A0 Please enter a contact name\")\n         \
+      \   error_label.show()\n            return\n\n        if len(name) > 50:\n \
+      \           error_label.setText(\"\u26A0 Contact name must be less than 50 characters\"\
+      )\n            error_label.show()\n            return\n\n        if not address:\n\
+      \            error_label.setText(\"\u26A0 Please enter a hex address\")\n  \
+      \          error_label.show()\n            return\n\n        if len(address)\
+      \ != 4:\n            error_label.setText(\"\u26A0 Address must be exactly 4\
+      \ hexadecimal characters\")\n            error_label.show()\n            return\n\
+      \n        try:\n            int(address, 16)\n        except ValueError:\n \
+      \           error_label.setText(\"\u26A0 Address must contain only hexadecimal\
+      \ characters (0-9, A-F)\")\n            error_label.show()\n            return\n\
+      \n        address = address.upper()\n\n        if address in self.contacts:\n\
+      \            error_label.setText(f\"\u26A0 A contact with address {address}\
+      \ already exists\")\n            error_label.show()\n            return\n\n\
+      \        colors = [\"#E74C3C\", \"#9B59B6\", \"#3498DB\", \"#1ABC9C\", \"#F39C12\"\
+      , \"#E67E22\", \"#1A92A1\", \"#D71C6D\"]\n        color = colors[len(self.contacts)\
+      \ % len(colors)]\n        contact = Contact(name, address, color)\n\n      \
+      \  self.contacts[address] = contact\n        if address not in self.chat_history:\n\
+      \            self.chat_history[address] = []\n        if address not in self.pending_map:\n\
+      \            self.pending_map[address] = []\n\n        self.save_contacts()\n\
+      \        self.save_chat_history()\n\n        self.add_contact_item(contact)\n\
+      \        self.show_toast(f\"\u2713 Contact '{name}' added successfully\")\n\
+      \        dialog.accept()\n\n    def add_contact_item(self, contact):\n     \
+      \   \"\"\"Add contact item to sidebar with enhanced UI\"\"\"\n        item =\
+      \ QtWidgets.QPushButton()\n        item.setFixedHeight(80)\n        item.setCursor(QtCore.Qt.PointingHandCursor)\n\
+      \n        item_layout = QtWidgets.QHBoxLayout(item)\n        item_layout.setContentsMargins(12,\
+      \ 8, 12, 8)\n        item_layout.setSpacing(12)\n\n        avatar = QtWidgets.QLabel(contact.name[0].upper())\n\
+      \        avatar.setFixedSize(50, 50)\n        avatar.setAlignment(QtCore.Qt.AlignCenter)\n\
+      \        avatar.setStyleSheet(f\"\"\"\n            background-color: {contact.color};\n\
+      \            color: white;\n            border-radius: 25px;\n            font-size:\
+      \ 20px;\n            font-weight: bold;\n        \"\"\")\n        item_layout.addWidget(avatar)\n\
+      \n        info_layout = QtWidgets.QVBoxLayout()\n        info_layout.setSpacing(3)\n\
+      \n        name_label = QtWidgets.QLabel(contact.name)\n        name_label.setStyleSheet(\"\
+      color: white; font-weight: bold; font-size: 14px;\")\n        info_layout.addWidget(name_label)\n\
+      \n        addr_label = QtWidgets.QLabel(f\"0x{contact.address}\")\n        addr_label.setStyleSheet(\"\
+      color: #95A5A6; font-size: 12px; font-family: monospace;\")\n        info_layout.addWidget(addr_label)\n\
+      \n        item_layout.addLayout(info_layout)\n        item_layout.addStretch()\n\
+      \n        badge = QtWidgets.QLabel()\n        badge.setFixedSize(28, 28)\n \
+      \       badge.setAlignment(QtCore.Qt.AlignCenter)\n        badge.setStyleSheet(\"\
+      \"\"\n            background-color: #E74C3C;\n            color: white;\n  \
+      \          border-radius: 14px;\n            font-size: 11px;\n            font-weight:\
+      \ bold;\n        \"\"\")\n        badge.hide()\n        item_layout.addWidget(badge)\n\
+      \n        contact.badge_widget = badge\n        contact.button_widget = item\n\
+      \        contact.avatar_widget = avatar\n\n        item.setStyleSheet(\"\"\"\
+      \n            QPushButton {\n                background-color: transparent;\n\
+      \                border: none;\n                text-align: left;\n        \
+      \        border-radius: 6px;\n            }\n            QPushButton:hover {\n\
+      \                background-color: #34495E;\n            }\n            QPushButton:pressed\
+      \ {\n                background-color: #2C3E50;\n            }\n        \"\"\
+      \")\n\n        item.clicked.connect(lambda: self.select_contact(contact))\n\
+      \        self.contacts_layout.insertWidget(self.contacts_layout.count() - 1,\
+      \ item)\n\n    def show_contact_menu(self):\n        \"\"\"Show context menu\
+      \ for contact\"\"\"\n        if not self.current_contact:\n            return\n\
+      \n        menu = QtWidgets.QMenu(self)\n        menu.setStyleSheet(\"\"\"\n\
+      \            QMenu {\n                background-color: white;\n           \
+      \     color: #2C3E50;\n                border: 1px solid #E8EAED;\n        \
+      \        border-radius: 4px;\n                padding: 4px 0px;\n          \
+      \  }\n            QMenu::item {\n                padding: 8px 16px;\n      \
+      \      }\n            QMenu::item:selected {\n                background-color:\
+      \ #E8EAED;\n            }\n        \"\"\")\n\n        edit_action = menu.addAction(\"\
+      \u270F  Edit Contact\")\n        edit_action.triggered.connect(self.edit_contact_dialog)\n\
+      \n        delete_action = menu.addAction(\"\U0001F5D1  Delete Contact\")\n \
+      \       delete_action.triggered.connect(self.delete_contact_confirm)\n\n   \
+      \     menu.exec_(QtGui.QCursor.pos())\n\n    def edit_contact_dialog(self):\n\
+      \        \"\"\"Show dialog to edit contact\"\"\"\n        if not self.current_contact:\n\
+      \            return\n\n        dialog = QtWidgets.QDialog(self)\n        dialog.setWindowTitle(\"\
+      Edit Contact\")\n        dialog.setModal(True)\n        dialog.setFixedSize(450,\
+      \ 250)\n\n        layout = QtWidgets.QVBoxLayout(dialog)\n        layout.setSpacing(15)\n\
+      \        layout.setContentsMargins(25, 25, 25, 25)\n\n        title = QtWidgets.QLabel(\"\
+      Edit Contact\")\n        title.setStyleSheet(\"font-size: 16px; font-weight:\
+      \ bold; color: #2C3E50;\")\n        layout.addWidget(title)\n\n        form_layout\
+      \ = QtWidgets.QFormLayout()\n        form_layout.setSpacing(12)\n\n        name_label\
+      \ = QtWidgets.QLabel(\"Contact Name:\")\n        name_input = QtWidgets.QLineEdit()\n\
+      \        name_input.setText(self.current_contact.name)\n        name_input.setMinimumHeight(35)\n\
+      \        name_input.setStyleSheet(\"\"\"\n            QLineEdit {\n        \
+      \        border: 2px solid #E8EAED;\n                border-radius: 6px;\n \
+      \               padding: 8px 12px;\n                font-size: 13px;\n     \
+      \           background-color: #F8F9FA;\n            }\n            QLineEdit:focus\
+      \ {\n                border: 2px solid #3498DB;\n                background-color:\
+      \ white;\n            }\n        \"\"\")\n        form_layout.addRow(name_label,\
+      \ name_input)\n\n        addr_label = QtWidgets.QLabel(\"Address:\")\n     \
+      \   addr_display = QtWidgets.QLineEdit()\n        addr_display.setText(f\"0x{self.current_contact.address}\"\
+      )\n        addr_display.setReadOnly(True)\n        addr_display.setMinimumHeight(35)\n\
+      \        addr_display.setStyleSheet(\"\"\"\n            QLineEdit {\n      \
+      \          border: 2px solid #E8EAED;\n                border-radius: 6px;\n\
+      \                padding: 8px 12px;\n                font-size: 13px;\n    \
+      \            background-color: #F0F0F0;\n                color: #7F8C8D;\n \
+      \               font-family: monospace;\n            }\n        \"\"\")\n  \
+      \      form_layout.addRow(addr_label, addr_display)\n\n        layout.addLayout(form_layout)\n\
+      \        layout.addStretch()\n\n        btn_layout = QtWidgets.QHBoxLayout()\n\
+      \        btn_layout.addStretch()\n\n        cancel_btn = QtWidgets.QPushButton(\"\
+      Cancel\")\n        cancel_btn.setMinimumWidth(100)\n        cancel_btn.setMinimumHeight(35)\n\
+      \        cancel_btn.setStyleSheet(\"\"\"\n            QPushButton {\n      \
+      \          background-color: #ECF0F1;\n                color: #2C3E50;\n   \
+      \             border: none;\n                border-radius: 6px;\n         \
+      \       font-weight: bold;\n                font-size: 13px;\n            }\n\
+      \            QPushButton:hover {\n                background-color: #D5DBDB;\n\
+      \            }\n        \"\"\")\n        cancel_btn.clicked.connect(dialog.reject)\n\
+      \        btn_layout.addWidget(cancel_btn)\n\n        save_btn = QtWidgets.QPushButton(\"\
+      Save Changes\")\n        save_btn.setMinimumWidth(120)\n        save_btn.setMinimumHeight(35)\n\
+      \        save_btn.setStyleSheet(\"\"\"\n            QPushButton {\n        \
+      \        background-color: #3498DB;\n                color: white;\n       \
+      \         border: none;\n                border-radius: 6px;\n             \
+      \   font-weight: bold;\n                font-size: 13px;\n            }\n  \
+      \          QPushButton:hover {\n                background-color: #2980B9;\n\
+      \            }\n        \"\"\")\n        save_btn.clicked.connect(lambda: self.save_contact_changes(name_input.text().strip(),\
+      \ dialog))\n        btn_layout.addWidget(save_btn)\n\n        layout.addLayout(btn_layout)\n\
+      \        dialog.exec_()\n\n    def save_contact_changes(self, new_name, dialog):\n\
+      \        \"\"\"Save contact changes\"\"\"\n        if not new_name:\n      \
+      \      QtWidgets.QMessageBox.warning(dialog, \"Invalid\", \"Contact name cannot\
+      \ be empty\")\n            return\n\n        if len(new_name) > 50:\n      \
+      \      QtWidgets.QMessageBox.warning(dialog, \"Invalid\", \"Contact name is\
+      \ too long\")\n            return\n\n        self.current_contact.name = new_name\n\
+      \        self.save_contacts()\n\n        # Update UI label in button\n     \
+      \   # Find name label inside the button widget\n        btn_layout = self.current_contact.button_widget.layout()\n\
+      \        for i in range(btn_layout.count()):\n            widget = btn_layout.itemAt(i).widget()\n\
+      \            if isinstance(widget, QtWidgets.QWidget) and widget.layout():\n\
+      \                inner_layout = widget.layout()\n                for j in range(inner_layout.count()):\n\
+      \                    w = inner_layout.itemAt(j).widget()\n                 \
+      \   if isinstance(w, QtWidgets.QLabel) and w.text() != f\"0x{self.current_contact.address}\"\
+      :\n                        w.setText(new_name)\n                        break\n\
+      \n        self.chat_title.setText(f\"{new_name} (0x{self.current_contact.address})\"\
+      )\n        self.show_toast(f\"\u2713 Contact updated to '{new_name}'\")\n  \
+      \      dialog.accept()\n\n    def delete_contact_confirm(self):\n        \"\"\
+      \"Confirm and delete contact\"\"\"\n        if not self.current_contact:\n \
+      \           return\n\n        reply = QtWidgets.QMessageBox.question(\n    \
+      \        self,\n            \"Delete Contact\",\n            f\"Are you sure\
+      \ you want to delete '{self.current_contact.name}'?\\nThis will also delete\
+      \ all chat history.\",\n            QtWidgets.QMessageBox.Yes | QtWidgets.QMessageBox.No,\n\
+      \            QtWidgets.QMessageBox.No\n        )\n\n        if reply == QtWidgets.QMessageBox.Yes:\n\
+      \            self.delete_contact()\n\n    def delete_contact(self):\n      \
+      \  \"\"\"Delete current contact\"\"\"\n        address = self.current_contact.address\n\
+      \n        if self.current_contact.button_widget:\n            self.current_contact.button_widget.deleteLater()\n\
+      \n        if address in self.contacts:\n            del self.contacts[address]\n\
+      \        if address in self.chat_history:\n            del self.chat_history[address]\n\
+      \        if address in self.pending_map:\n            del self.pending_map[address]\n\
+      \n        self.save_contacts()\n        self.save_chat_history()\n\n       \
+      \ self.current_contact = None\n        self.chat_title.setText(\"Select a contact\
+      \ to start messaging\")\n        self.message_input.setEnabled(False)\n    \
+      \    self.send_btn.setEnabled(False)\n        self.contact_menu_btn.hide()\n\
+      \        self.header_avatar.hide()\n\n        while self.messages_layout.count()\
+      \ > 1:\n            item = self.messages_layout.takeAt(0)\n            if item.widget():\n\
+      \                item.widget().deleteLater()\n\n        self.show_toast(\"\u2713\
+      \ Contact deleted\")\n\n    def filter_contacts(self, text):\n        \"\"\"\
+      Filter contacts by search text\"\"\"\n        search_text = text.lower()\n\n\
+      \        for address, contact in self.contacts.items():\n            if contact.button_widget:\n\
+      \                match = (search_text in contact.name.lower() or\n         \
+      \                search_text in address.lower())\n                contact.button_widget.setVisible(match)\n\
+      \n    def select_contact(self, contact):\n        \"\"\"Select a contact and\
+      \ show chat\"\"\"\n        if self.current_contact and self.current_contact.button_widget:\n\
+      \            self.current_contact.button_widget.setStyleSheet(\"\"\"\n     \
+      \           QPushButton {\n                    background-color: transparent;\n\
+      \                    border: none;\n                    text-align: left;\n\
+      \                    border-radius: 6px;\n                }\n              \
+      \  QPushButton:hover {\n                    background-color: #34495E;\n   \
+      \             }\n            \"\"\")\n\n        self.current_contact = contact\n\
+      \        contact.button_widget.setStyleSheet(\"\"\"\n            QPushButton\
+      \ {\n                background-color: #34495E;\n                border: none;\n\
+      \                text-align: left;\n                border-radius: 6px;\n  \
+      \              border-left: 4px solid #3498DB;\n            }\n        \"\"\"\
+      )\n\n        contact.unread_count = 0\n        contact.badge_widget.hide()\n\
+      \n        self.chat_title.setText(f\"{contact.name} (0x{contact.address})\"\
+      )\n        self.header_avatar.setText(contact.name[0].upper())\n        self.header_avatar.setStyleSheet(f\"\
+      \"\"\n            background-color: {contact.color};\n            color: white;\n\
+      \            border-radius: 22px;\n            font-size: 18px;\n          \
+      \  font-weight: bold;\n        \"\"\")\n        self.header_avatar.show()\n\
+      \        self.contact_menu_btn.show()\n\n        self.message_input.setEnabled(True)\n\
+      \        self.send_btn.setEnabled(True)\n        self.message_input.setFocus()\n\
+      \n        self.load_chat_history_view(contact.address)\n\n    # =================\
+      \ CHAT VIEW & MESSAGE BUBBLES =================\n    def load_chat_history_view(self,\
+      \ address):\n        \"\"\"Load and display chat history for selected contact\"\
+      \"\"\n        while self.messages_layout.count() > 1:\n            item = self.messages_layout.takeAt(0)\n\
+      \            if item.widget():\n                item.widget().deleteLater()\n\
+      \n        if address not in self.pending_map:\n            self.pending_map[address]\
+      \ = []\n\n        # Render messages\n        if address in self.chat_history:\n\
+      \            for entry in self.chat_history[address]:\n                ts =\
+      \ entry.get('timestamp')\n                sent = entry.get('is_sent', False)\n\
+      \                msg = entry.get('message', '')\n                delivery =\
+      \ entry.get('delivery', None)\n                self.add_message_bubble(address,\
+      \ msg, sent, ts, False, delivery)\n\n        QtCore.QTimer.singleShot(100, self.scroll_to_bottom)\n\
+      \n    def add_message_bubble(self, address, message, is_sent, timestamp=None,\
+      \ animate=True, delivery=None):\n        \"\"\"Add a message bubble to the chat\
+      \ with status tag for sent messages\"\"\"\n        if timestamp is None:\n \
+      \           timestamp = datetime.now().strftime(\"%H:%M\")\n\n        container\
+      \ = QtWidgets.QWidget()\n        container_layout = QtWidgets.QHBoxLayout(container)\n\
+      \        container_layout.setContentsMargins(0, 0, 0, 0)\n        container_layout.setSpacing(0)\n\
+      \n        if is_sent:\n            container_layout.addStretch()\n\n       \
+      \ bubble = QtWidgets.QWidget()\n        bubble_layout = QtWidgets.QVBoxLayout(bubble)\n\
+      \        bubble_layout.setContentsMargins(14, 10, 14, 6)\n        bubble_layout.setSpacing(4)\n\
+      \n        msg_label = QtWidgets.QLabel(message)\n        msg_label.setWordWrap(True)\n\
+      \        msg_label.setMaximumWidth(450)\n        msg_label.setTextInteractionFlags(QtCore.Qt.TextSelectableByMouse)\n\
+      \        bubble_layout.addWidget(msg_label)\n\n        time_label = QtWidgets.QLabel(timestamp)\n\
+      \        time_label.setAlignment(QtCore.Qt.AlignRight if is_sent else QtCore.Qt.AlignLeft)\n\
+      \        time_label.setObjectName(\"time\")\n        bubble_layout.addWidget(time_label)\n\
+      \n        status_label = None\n        if is_sent:\n            status_label\
+      \ = QtWidgets.QLabel()\n            bubble_layout.addWidget(status_label)\n\
+      \            # Initial status text/color\n            if delivery is True:\n\
+      \                status_label.setText(\"\u2713 Delivered\")\n              \
+      \  status_label.setStyleSheet(\"color: #27AE60; font-size: 11px;\")\n      \
+      \      elif delivery is False:\n                status_label.setText(\"\u2717\
+      \ Failed\")\n                status_label.setStyleSheet(\"color: #E74C3C; font-size:\
+      \ 11px;\")\n            else:\n                status_label.setText(\"\u2026\
+      \ Sending\")\n                status_label.setStyleSheet(\"color: #95A5A6; font-size:\
+      \ 11px;\")\n                # Track pending for later update\n             \
+      \   self.pending_map.setdefault(address, []).append(status_label)\n\n      \
+      \  if is_sent:\n            bubble.setStyleSheet(\"\"\"\n                QWidget\
+      \ {\n                    background-color: #3498DB;\n                    border-radius:\
+      \ 15px;\n                }\n                QLabel {\n                    color:\
+      \ white;\n                    font-size: 14px;\n                }\n        \
+      \        QLabel#time {\n                    font-size: 11px;\n             \
+      \       color: rgba(255, 255, 255, 0.85);\n                }\n            \"\
+      \"\")\n        else:\n            bubble.setStyleSheet(\"\"\"\n            \
+      \    QWidget {\n                    background-color: white;\n             \
+      \       border-radius: 15px;\n                }\n                QLabel {\n\
+      \                    color: #2C3E50;\n                    font-size: 14px;\n\
+      \                }\n                QLabel#time {\n                    font-size:\
+      \ 11px;\n                    color: #95A5A6;\n                }\n          \
+      \  \"\"\")\n\n        container_layout.addWidget(bubble)\n        if not is_sent:\n\
+      \            container_layout.addStretch()\n\n        self.messages_layout.insertWidget(self.messages_layout.count()\
+      \ - 1, container)\n\n        # Ensure history has delivery field persisted\n\
+      \        if address not in self.chat_history:\n            self.chat_history[address]\
+      \ = []\n        if delivery is None and not any(\n            (entry.get('timestamp')\
+      \ == timestamp and entry.get('message') == message and entry.get('is_sent')\
+      \ == is_sent)\n            for entry in self.chat_history[address]\n       \
+      \ ):\n            self.chat_history[address].append({\n                'timestamp':\
+      \ timestamp,\n                'is_sent': is_sent,\n                'message':\
+      \ message,\n                'delivery': (None if is_sent else True)\n      \
+      \      })\n            self.save_chat_history()\n\n        if animate:\n   \
+      \         QtCore.QTimer.singleShot(50, self.scroll_to_bottom)\n\n    def scroll_to_bottom(self):\n\
+      \        \"\"\"Scroll messages to bottom\"\"\"\n        scrollbar = self.messages_scroll.verticalScrollBar()\n\
+      \        scrollbar.setValue(scrollbar.maximum())\n\n    def send_message(self):\n\
+      \        \"\"\"Send a message\"\"\"\n        if not self.current_contact:\n\
+      \            return\n\n        message = self.message_input.text().strip()\n\
+      \        if not message:\n            return\n\n        addr = self.current_contact.address\n\
+      \        if self.block.send_message(addr, message):\n            timestamp =\
+      \ datetime.now().strftime(\"%H:%M\")\n            # Persist history with delivery=None\n\
+      \            self.chat_history.setdefault(addr, []).append({\n             \
+      \   'timestamp': timestamp,\n                'is_sent': True,\n            \
+      \    'message': message,\n                'delivery': None\n            })\n\
+      \            self.save_chat_history()\n            # Add bubble with Sending\
+      \ tag\n            self.add_message_bubble(addr, message, True, timestamp, True,\
+      \ delivery=None)\n            self.message_input.clear()\n        else:\n  \
+      \          QtWidgets.QMessageBox.critical(self, \"Send Error\",\n          \
+      \      \"Failed to send message. Check console for details.\")\n\n    @QtCore.pyqtSlot(str,\
+      \ str)\n    def receive_message(self, address, message):\n        \"\"\"Handle\
+      \ received message\"\"\"\n        timestamp = datetime.now().strftime(\"%H:%M\"\
+      )\n\n        if address not in self.contacts:\n            contact = Contact(f\"\
+      Unknown-{address[:2]}\", address, \"#95A5A6\")\n            self.contacts[address]\
+      \ = contact\n            self.chat_history[address] = []\n            self.pending_map[address]\
+      \ = []\n            self.add_contact_item(contact)\n            self.save_contacts()\n\
+      \n        self.chat_history[address].append({\n            'timestamp': timestamp,\n\
+      \            'is_sent': False,\n            'message': message,\n          \
+      \  'delivery': True  # Received messages are shown as delivered (no tag)\n \
+      \       })\n        self.save_chat_history()\n\n        if self.current_contact\
+      \ and self.current_contact.address == address:\n            self.add_message_bubble(address,\
+      \ message, False, timestamp, True, delivery=True)\n        else:\n         \
+      \   contact = self.contacts[address]\n            contact.unread_count += 1\n\
+      \            contact.badge_widget.setText(str(contact.unread_count))\n     \
+      \       contact.badge_widget.show()\n            self.show_toast(f\"Message\
+      \ from {contact.name}\")\n\n    @QtCore.pyqtSlot(bool)\n    def update_status(self,\
+      \ success):\n        \"\"\"Update transmission status: last pending sent message\
+      \ for current contact\"\"\"\n        # Update header indicator\n        if success:\n\
+      \            self.status_indicator.setStyleSheet(\"color: #27AE60; font-size:\
+      \ 14px;\")\n            self.status_text.setText(\"\u2713 Delivered\")\n   \
+      \         self.status_text.setStyleSheet(\"color: #27AE60; font-size: 12px;\"\
+      )\n        else:\n            self.status_indicator.setStyleSheet(\"color: #E74C3C;\
+      \ font-size: 14px;\")\n            self.status_text.setText(\"\u2717 Failed\"\
+      )\n            self.status_text.setStyleSheet(\"color: #E74C3C; font-size: 12px;\"\
+      )\n\n        # Update the most recent pending sent bubble's tag\n        addr\
+      \ = self.current_contact.address if self.current_contact else None\n       \
+      \ if addr:\n            pending_list = self.pending_map.get(addr, [])\n    \
+      \        # Find the last pending tag (LIFO)\n            while pending_list:\n\
+      \                status_label = pending_list.pop()\n                if status_label\
+      \ is not None:\n                    if success:\n                        status_label.setText(\"\
+      \u2713 Delivered\")\n                        status_label.setStyleSheet(\"color:\
+      \ #27AE60; font-size: 11px;\")\n                    else:\n                \
+      \        status_label.setText(\"\u2717 Failed\")\n                        status_label.setStyleSheet(\"\
+      color: #E74C3C; font-size: 11px;\")\n                    break\n\n         \
+      \   # Also update the persisted history: last is_sent with delivery=None\n \
+      \           hist = self.chat_history.get(addr, [])\n            for i in range(len(hist)\
+      \ - 1, -1, -1):\n                if hist[i].get('is_sent') and hist[i].get('delivery')\
+      \ is None:\n                    hist[i]['delivery'] = True if success else False\n\
+      \                    break\n            self.save_chat_history()\n\n       \
+      \ QtCore.QTimer.singleShot(3000, self.reset_status)\n\n    def reset_status(self):\n\
+      \        \"\"\"Reset status indicator\"\"\"\n        self.status_indicator.setStyleSheet(\"\
+      color: #95A5A6; font-size: 14px;\")\n        self.status_text.setText(\"Ready\"\
+      )\n        self.status_text.setStyleSheet(\"color: #7F8C8D; font-size: 12px;\"\
+      )\n\n    def show_toast(self, message, duration=3000):\n        \"\"\"Show toast\
+      \ notification safely\"\"\"\n        try:\n            def create_and_show():\n\
+      \                toast = ToastNotification(message, self, duration)\n      \
+      \          toast.showNotification()\n            QtCore.QTimer.singleShot(0,\
+      \ create_and_show)\n        except Exception as e:\n            print(f\"[Toast\
+      \ Error] {e}\")\n            self.statusBar().showMessage(message, duration)\n\
+      \n    # ================= PERSISTENCE =================\n    def load_contacts(self):\n\
+      \        \"\"\"Load contacts from file\"\"\"\n        try:\n            if os.path.exists(self.contacts_file):\n\
+      \                with open(self.contacts_file, 'r') as f:\n                \
+      \    data = json.load(f)\n                    # data: {addr: {name, color}}\n\
+      \                    for addr, info in data.items():\n                     \
+      \   self.contacts[addr] = Contact(info['name'], addr, info.get('color', '#4A90E2'))\n\
+      \                        if addr not in self.chat_history:\n               \
+      \             self.chat_history[addr] = []\n                        if addr\
+      \ not in self.pending_map:\n                            self.pending_map[addr]\
+      \ = []\n        except Exception as e:\n            print(f\"[Error loading\
+      \ contacts] {e}\")\n\n    def save_contacts(self):\n        \"\"\"Save contacts\
+      \ to file\"\"\"\n        try:\n            data = {}\n            for addr,\
+      \ contact in self.contacts.items():\n                data[addr] = {\n      \
+      \              'name': contact.name,\n                    'color': contact.color\n\
+      \                }\n            with open(self.contacts_file, 'w') as f:\n \
+      \               json.dump(data, f, indent=2)\n        except Exception as e:\n\
+      \            print(f\"[Error saving contacts] {e}\")\n\n    def load_chat_history(self):\n\
+      \        \"\"\"Load chat history from file\"\"\"\n        try:\n           \
+      \ if os.path.exists(self.history_file):\n                with open(self.history_file,\
+      \ 'r') as f:\n                    loaded = json.load(f)\n                  \
+      \  # Normalize entries to ensure 'delivery' field exists\n                 \
+      \   self.chat_history = {}\n                    for addr, msgs in loaded.items():\n\
+      \                        normalized = []\n                        for m in msgs:\n\
+      \                            normalized.append({\n                         \
+      \       'timestamp': m.get('timestamp'),\n                                'is_sent':\
+      \ m.get('is_sent', False),\n                                'message': m.get('message',\
+      \ ''),\n                                'delivery': m.get('delivery', (None\
+      \ if m.get('is_sent', False) else True))\n                            })\n \
+      \                       self.chat_history[addr] = normalized\n            else:\n\
+      \                self.chat_history = {}\n        except Exception as e:\n  \
+      \          print(f\"[Error loading history] {e}\")\n            self.chat_history\
+      \ = {}\n        finally:\n            # Initialize pending map for addresses\
+      \ present\n            for addr in list(self.chat_history.keys()):\n       \
+      \         if addr not in self.pending_map:\n                    self.pending_map[addr]\
+      \ = []\n\n    def save_chat_history(self):\n        \"\"\"Save chat history\
+      \ to file\"\"\"\n        try:\n            with open(self.history_file, 'w')\
+      \ as f:\n                json.dump(self.chat_history, f, indent=2)\n       \
+      \ except Exception as e:\n            print(f\"[Error saving history] {e}\"\
+      )\n\n    def closeEvent(self, event):\n        \"\"\"Handle window close\"\"\
+      \"\n        reply = QtWidgets.QMessageBox.question(\n            self,\n   \
+      \         \"Exit Radio Messenger\",\n            \"Are you sure you want to\
+      \ exit?\",\n            QtWidgets.QMessageBox.Yes | QtWidgets.QMessageBox.No\n\
+      \        )\n\n        if reply == QtWidgets.QMessageBox.Yes:\n            self.save_contacts()\n\
+      \            self.save_chat_history()\n            event.accept()\n        else:\n\
+      \            event.ignore()\n"
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+  states:
+    _io_cache: '(''comm_gui'', ''comm_gui'', [], [(''status_in'', ''message'', 1),
+      (''msg_in'', ''message'', 1)], [(''msg_out'', ''message'', 1), (''addr_out'',
+      ''message'', 1)], ''\n    PyQt5-based Messaging App GUI for GNU Radio\n    -------------------------------------------\n    Modern
+      chat-style interface with contact management\n\n    Inputs:\n    1) status_in:
+      Status (1 byte: 0=error, 1=success)\n    2) msg_in: Received message\n\n    Outputs:\n    1)
+      addr_out: 2-byte destination address\n    2) msg_out: Message to send\n    '',
+      [])'
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [256, 216.0]
+    rotation: 0
+    state: enabled
+- name: epy_block_5
+  id: epy_block
+  parameters:
+    _source_code: "import pmt\nfrom gnuradio import gr\n\nclass blk(gr.basic_block):\n\
+      \    def __init__(self):\n        gr.basic_block.__init__(\n            self,\n\
+      \            name=\"PDU Header Splitter (first 6 bytes)\",\n            in_sig=None,\n\
+      \            out_sig=None,\n        )\n\n        # Message ports\n        self.message_port_register_in(pmt.intern(\"\
+      in\"))\n        self.set_msg_handler(pmt.intern(\"in\"), self.handle_msg)\n\n\
+      \        self.message_port_register_out(pmt.intern(\"header_out\"))\n      \
+      \  self.message_port_register_out(pmt.intern(\"pdu_out\"))\n\n\n    def handle_msg(self,\
+      \ msg):\n        if not pmt.is_pair(msg):\n            return\n\n        meta\
+      \ = pmt.car(msg)\n        data = pmt.cdr(msg)\n\n        if not pmt.is_u8vector(data):\n\
+      \            return\n\n        # Convert PDU to Python list of ints\n      \
+      \  payload_list = list(pmt.u8vector_elements(data))\n\n        # Extract first\
+      \ 6 bytes\n        header_list = payload_list[:6]\n\n        # Convert back\
+      \ to PMT u8vectors\n        header_pmt = pmt.init_u8vector(len(header_list),\
+      \ header_list)\n        full_pmt   = pmt.init_u8vector(len(payload_list), payload_list)\n\
+      \n        # Publish header\n        self.message_port_pub(\n            pmt.intern(\"\
+      header_out\"),\n            pmt.cons(meta, header_pmt)\n        )\n\n      \
+      \  # Publish full PDU\n        self.message_port_pub(\n            pmt.intern(\"\
+      pdu_out\"),\n            pmt.cons(meta, full_pmt)\n        )\n\n"
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+  states:
+    _io_cache: ('PDU Header Splitter (first 6 bytes)', 'blk', [], [('in', 'message',
+      1)], [('pdu_out', 'message', 1), ('header_out', 'message', 1)], '', [])
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [768, 1832.0]
+    rotation: 180
+    state: disabled
+- name: epy_block_6
+  id: epy_block
+  parameters:
+    _source_code: "#!/usr/bin/env python\n# -- coding: utf-8 --\n\nimport numpy as\
+      \ np\nfrom gnuradio import gr\nimport pmt\n\nclass pdu_dedup_reassemble(gr.basic_block):\n\
+      \    \"\"\"\n    PDU Deduplication and Message Reassembly Block\n    \"\"\"\n\
+      \n    def __init__(self,\n                 name: str = \"pdu_dedup_reassemble\"\
+      ,\n                 in_sig=None,\n                 out_sig=None,\n         \
+      \        eof_marker: bytes = bytes([0x23, 0x45, 0x4F, 0x46])):\n        \"\"\
+      \"\n        Constructor with defaults:\n        - name: block name\n       \
+      \ - in_sig/out_sig: GNU Radio stream signatures (default None)\n        - eof_marker:\
+      \ marker for end-of-message\n        \"\"\"\n        gr.basic_block.__init__(self,\n\
+      \                                name=name,\n                              \
+      \  in_sig=in_sig,\n                                out_sig=out_sig)\n\n    \
+      \    # Register message ports\n        self.message_port_register_in(pmt.intern('pdu_in'))\n\
+      \        self.message_port_register_out(pmt.intern('pdu_out'))\n\n        #\
+      \ Set message handler (must exist!)\n        self.set_msg_handler(pmt.intern('pdu_in'),\
+      \ self.handle_pdu)\n\n        # Storage\n        self.current_dst_addr = None\n\
+      \        self.current_src_addr = None\n        self.packet_buffer = {}\n   \
+      \     self.received_seqs = set()\n\n        # EOF marker\n        self.EOF_MARKER\
+      \ = eof_marker\n\n    # -------------------------\n    # Message handler\n \
+      \   # -------------------------\n    def handle_pdu(self, pdu):\n        \"\"\
+      \"Handle incoming PDU messages\"\"\"\n        try:\n            meta = pmt.car(pdu)\n\
+      \            data = pmt.cdr(pdu)\n\n            if pmt.is_u8vector(data):\n\
+      \                packet = bytes(pmt.u8vector_elements(data))\n            else:\n\
+      \                self.log_warn(\"Received non-u8vector PDU\")\n            \
+      \    return\n\n            if len(packet) < 6:\n                self.log_warn(f\"\
+      Packet too short: {len(packet)} bytes\")\n                return\n\n       \
+      \     dst_addr = (packet[0] << 8) | packet[1]\n            src_addr = (packet[2]\
+      \ << 8) | packet[3]\n            seq_num = (packet[4] << 8) | packet[5]\n  \
+      \          payload = packet[6:]\n\n            self.log_info(f\"Received: DST=0x{dst_addr:04X},\
+      \ SRC=0x{src_addr:04X}, \"\n                          f\"SEQ={seq_num}, payload_len={len(payload)}\"\
+      )\n\n            # \u2026 rest of your logic unchanged \u2026\n        except\
+      \ Exception as e:\n            self.log_error(f\"Error handling PDU: {e}\")\n\
+      \n    # -------------------------\n    # Utility methods\n    # -------------------------\n\
+      \    def log_info(self, msg): print(f\"[PDU Dedup] INFO: {msg}\")\n    def log_warn(self,\
+      \ msg): print(f\"[PDU Dedup] WARN: {msg}\")\n    def log_error(self, msg): print(f\"\
+      [PDU Dedup] ERROR: {msg}\")\n\n"
+    affinity: ''
+    alias: ''
+    comment: ''
+    eof_marker: ''
+    in_sig: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    name: ''
+    out_sig: ''
+  states:
+    _io_cache: ('pdu_dedup_reassemble', 'pdu_dedup_reassemble', [('name', "'pdu_dedup_reassemble'"),
+      ('in_sig', 'None'), ('out_sig', 'None'), ('eof_marker', "b'#EOF'")], [('pdu_in',
+      'message', 1)], [('pdu_out', 'message', 1)], '\n    PDU Deduplication and Message
+      Reassembly Block\n    ', [])
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [680, 2272.0]
+    rotation: 180
+    state: disabled
+- name: epy_block_7
+  id: epy_block
+  parameters:
+    _source_code: "import time\nfrom gnuradio import gr\nimport pmt\nimport threading\n\
+      \nclass packet_group_processor(gr.basic_block):\n\n    def __init__(self, timeout_ms=2000):\n\
+      \        gr.basic_block.__init__(\n            self,\n            name=\"packet_group_processor\"\
+      ,\n            in_sig=None,\n            out_sig=None\n        )\n\n       \
+      \ self.message_port_register_in(pmt.intern(\"in\"))\n        self.set_msg_handler(pmt.intern(\"\
+      in\"), self.handle_msg)\n\n        self.message_port_register_out(pmt.intern(\"\
+      out\"))\n\n        self.timeout_ms = timeout_ms\n        self.timer = None\n\
+      \n        self.reset_state()\n\n    # -----------------------------------------------------\n\
+      \    def reset_state(self):\n        self.last_seq = None\n        self.storage\
+      \ = []\n        if self.timer:\n            self.timer.cancel()\n          \
+      \  self.timer = None\n\n    # -----------------------------------------------------\n\
+      \    def restart_timer(self):\n        if self.timer:\n            self.timer.cancel()\n\
+      \        self.timer = threading.Timer(self.timeout_ms / 1000.0, self.timeout_expired)\n\
+      \        self.timer.start()\n\n    # -----------------------------------------------------\n\
+      \    def timeout_expired(self):\n        self.reset_state()\n\n    # -----------------------------------------------------\n\
+      \    def is_preamble(self, data):\n        return len(data) == 50 and all(b\
+      \ == 0x55 for b in data[6:])\n\n    # -----------------------------------------------------\n\
+      \    def is_postfiller(self, data):\n        return len(data) >= 10 and data[-4:]\
+      \ == bytes([0x23, 0x45, 0x4F, 0x46])\n\n    # -----------------------------------------------------\n\
+      \    def handle_msg(self, msg):\n\n        data = bytearray(pmt.u8vector_elements(pmt.cdr(msg)))\n\
+      \        seq_num = (data[4] << 8) | data[5]\n\n        # -------- Drop duplicate\
+      \ packets --------\n        if self.last_seq == seq_num:\n            return\
+      \  \n        self.last_seq = seq_num\n\n        # -------- Detect PREAMBLE --------\n\
+      \        if self.is_preamble(data):\n            self.restart_timer()\n    \
+      \        return  \n\n        # -------- Detect POST-FILLER --------\n      \
+      \  if self.is_postfiller(data):\n            self.output_stored_packets()\n\
+      \            self.reset_state()\n            return \n\n        # -------- Normal\
+      \ packet \u2192 Store --------\n        self.storage.append(bytes(data))\n \
+      \       self.restart_timer()\n\n    # -----------------------------------------------------\n\
+      \    def output_stored_packets(self):\n\n        if not self.storage:\n    \
+      \        return\n\n        # Extract SRC address from first packet (bytes 2\u2013\
+      3)\n        src_addr = self.storage[0][2:4]   # <-- FIX APPLIED\n\n        output_payload\
+      \ = bytearray()\n        output_payload += src_addr        # <-- ADD SRC BEFORE\
+      \ DATA\n\n        # Remove dst+src+seq (first 6 bytes) from ALL packets\n  \
+      \      for pkt in self.storage:\n            trimmed = pkt[6:]             #\
+      \ <-- FIX APPLIED\n            output_payload.extend(trimmed)\n\n        out_vec\
+      \ = pmt.init_u8vector(len(output_payload), output_payload)\n        self.message_port_pub(\n\
+      \            pmt.intern(\"out\"),\n            pmt.cons(pmt.PMT_NIL, out_vec)\n\
+      \        )\n\n"
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    timeout_ms: '1000'
+  states:
+    _io_cache: ('packet_group_processor', 'packet_group_processor', [('timeout_ms',
+      '2000')], [('in', 'message', 1)], [('out', 'message', 1)], '', ['timeout_ms'])
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [584, 2216.0]
+    rotation: 180
+    state: disabled
+- name: epy_block_7_0
+  id: epy_block
+  parameters:
+    _source_code: "#!/usr/bin/env python\n# -*- coding: utf-8 -*-\n\nimport numpy\
+      \ as np\nfrom gnuradio import gr\nimport pmt\n\nclass pdu_deduplicator(gr.basic_block):\n\
+      \    \"\"\"\n    Removes duplicate PDU packets based on sequence number.\n \
+      \   - Filters out preamble packets (seq = 0x0000)\n    - Tracks seen sequence\
+      \ numbers to avoid duplicates\n    - Flushes memory when postamble arrives (seq\
+      \ = 0x0002)\n    - Discards postamble PDUs\n    - Resets state when new preamble\
+      \ is detected\n    \"\"\"\n    def __init__(self):\n        gr.basic_block.__init__(self,\n\
+      \            name=\"pdu_deduplicator\",\n            in_sig=None,\n        \
+      \    out_sig=None)\n        \n        # Register message ports\n        self.message_port_register_in(pmt.intern('pdu_in'))\n\
+      \        self.message_port_register_out(pmt.intern('pdu_out'))\n        \n \
+      \       # Set message handler\n        self.set_msg_handler(pmt.intern('pdu_in'),\
+      \ self.handle_pdu)\n        \n        # State tracking\n        self.seen_seq_numbers\
+      \ = set()\n        self.in_message = False\n        self.preamble_seq = 0x0000\n\
+      \        self.postamble_seq = 0x0002\n        \n    def handle_pdu(self, pdu):\n\
+      \        \"\"\"Process incoming PDU messages\"\"\"\n        # Extract metadata\
+      \ and data from PDU\n        meta = pmt.car(pdu)\n        data = pmt.cdr(pdu)\n\
+      \        \n        # Convert PMT vector to numpy array\n        if pmt.is_u8vector(data):\n\
+      \            data_array = np.array(pmt.u8vector_elements(data), dtype=np.uint8)\n\
+      \        else:\n            print(\"Warning: PDU data is not a u8vector\")\n\
+      \            return\n        \n        # Check if we have enough bytes for header\n\
+      \        if len(data_array) < 6:\n            print(f\"Warning: PDU too short\
+      \ ({len(data_array)} bytes), ignoring\")\n            return\n        \n   \
+      \     # Extract sequence number from bytes 4 and 5 (0-indexed)\n        seq_number\
+      \ = (int(data_array[4]) << 8) | int(data_array[5])\n        \n        # Check\
+      \ for preamble (new message start)\n        if seq_number == self.preamble_seq:\n\
+      \            # New message detected - reset state\n            self.seen_seq_numbers.clear()\n\
+      \            self.in_message = True\n            print(f\"Preamble detected\
+      \ (seq=0x{seq_number:04X}), resetting state\")\n            # Don't forward\
+      \ preamble\n            return\n        \n        # Check for postamble (end\
+      \ of message)\n        if seq_number == self.postamble_seq:\n            print(f\"\
+      Postamble detected (seq=0x{seq_number:04X}), flushing memory\")\n          \
+      \  # Flush memory\n            self.seen_seq_numbers.clear()\n            self.in_message\
+      \ = False\n            # Don't forward postamble\n            return\n     \
+      \   \n        # If not in an active message, discard\n        if not self.in_message:\n\
+      \            print(f\"PDU received outside of message boundary (seq=0x{seq_number:04X}),\
+      \ discarding\")\n            return\n        \n        # Check if this sequence\
+      \ number has been seen\n        if seq_number in self.seen_seq_numbers:\n  \
+      \          print(f\"Duplicate PDU detected (seq=0x{seq_number:04X}), discarding\"\
+      )\n            return\n        \n        # New unique packet - add to seen set\
+      \ and forward\n        self.seen_seq_numbers.add(seq_number)\n        print(f\"\
+      Forwarding unique PDU (seq=0x{seq_number:04X})\")\n        \n        # Forward\
+      \ the PDU to output\n        self.message_port_pub(pmt.intern('pdu_out'), pdu)\n"
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+  states:
+    _io_cache: ('pdu_deduplicator', 'pdu_deduplicator', [], [('pdu_in', 'message',
+      1)], [('pdu_out', 'message', 1)], '\n    Removes duplicate PDU packets based
+      on sequence number.\n    - Filters out preamble packets (seq = 0x0000)\n    -
+      Tracks seen sequence numbers to avoid duplicates\n    - Flushes memory when
+      postamble arrives (seq = 0x0002)\n    - Discards postamble PDUs\n    - Resets
+      state when new preamble is detected\n    ', [])
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [392, 2120.0]
+    rotation: 180
+    state: enabled
+- name: epy_block_8
+  id: epy_block
+  parameters:
+    _source_code: "#!/usr/bin/env python3\n# -*- coding: utf-8 -*-\n\"\"\"\nGNU Radio\
+      \ Python Block: Output First 6 Bytes of Each Input PDU\n\"\"\"\n\nimport pmt\n\
+      from gnuradio import gr\n\nclass first6bytes_extractor(gr.basic_block):\n  \
+      \  \"\"\"\n    Inputs: PDU (u8vector)\n    Outputs: PDU (u8vector with first\
+      \ 6 bytes)\n    \"\"\"\n    def __init__(self):\n        gr.basic_block.__init__(\n\
+      \            self,\n            name=\"First 6 Bytes Extractor\",\n        \
+      \    in_sig=None,\n            out_sig=None\n        )\n\n        # Message\
+      \ ports\n        self.message_port_register_in(pmt.intern(\"in\"))\n       \
+      \ self.set_msg_handler(pmt.intern(\"in\"), self.handle_msg)\n        self.message_port_register_out(pmt.intern(\"\
+      out\"))\n\n    def handle_msg(self, msg_pmt):\n        \"\"\"\n        Handle\
+      \ incoming PDU message\n        \"\"\"\n        # Expecting a pair (meta, vector)\n\
+      \        if not pmt.is_pair(msg_pmt):\n            return\n\n        meta =\
+      \ pmt.car(msg_pmt)\n        vec = pmt.cdr(msg_pmt)\n\n        # Convert to byte\
+      \ array\n        if not pmt.is_u8vector(vec):\n            return\n        data\
+      \ = bytearray(pmt.u8vector_elements(vec))\n\n        # Take first 6 bytes (or\
+      \ all if smaller)\n        first6 = data[:6]\n\n        # Send out as PDU (keep\
+      \ meta unchanged)\n        out_vec = pmt.init_u8vector(len(first6), first6)\n\
+      \        self.message_port_pub(pmt.intern(\"out\"), pmt.cons(meta, out_vec))\n"
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+  states:
+    _io_cache: '(''First 6 Bytes Extractor'', ''first6bytes_extractor'', [], [(''in'',
+      ''message'', 1)], [(''out'', ''message'', 1)], ''\n    Inputs: PDU (u8vector)\n    Outputs:
+      PDU (u8vector with first 6 bytes)\n    '', [])'
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [416, 1960.0]
+    rotation: 180
+    state: enabled
+- name: fec_extended_tagged_decoder_2
+  id: fec_extended_tagged_decoder
+  parameters:
+    affinity: ''
+    alias: ''
+    ann: None
+    comment: ''
+    decoder_list: cc_dec
+    lentagname: '"packet_len"'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    mtu: MTU
+    puncpat: '''11'''
+    value: fec_extended_decoder
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1152, 1728.0]
+    rotation: 180
+    state: disabled
+- name: fec_extended_tagged_decoder_2_0
+  id: fec_extended_tagged_decoder
+  parameters:
+    affinity: ''
+    alias: ''
+    ann: None
+    comment: ''
+    decoder_list: cc_dec
+    lentagname: '"packet_len"'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    mtu: MTU
+    puncpat: '''11'''
+    value: fec_extended_decoder
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [3680, 1640.0]
+    rotation: 180
+    state: enabled
+- name: fec_extended_tagged_encoder_0_1_0
+  id: fec_extended_tagged_encoder
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    encoder_list: cc_enc
+    lentagname: '"packet_len"'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    mtu: MTU
+    puncpat: '''11'''
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1800, 416.0]
+    rotation: 0
+    state: disabled
+- name: fec_extended_tagged_encoder_0_1_0_0
+  id: fec_extended_tagged_encoder
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    encoder_list: cc_enc
+    lentagname: '"packet_len"'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    mtu: MTU
+    puncpat: '''11'''
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [3992, 168.0]
+    rotation: 0
+    state: enabled
+- name: pdu_pdu_to_tagged_stream_0
+  id: pdu_pdu_to_tagged_stream
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    tag: packet_len
+    type: byte
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [792, 488.0]
+    rotation: 0
+    state: enabled
+- name: pdu_pdu_to_tagged_stream_0_0
+  id: pdu_pdu_to_tagged_stream
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    tag: packet_len
+    type: byte
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [176, 1872.0]
+    rotation: 180
+    state: disabled
+- name: pdu_pdu_to_tagged_stream_0_0_0_0
+  id: pdu_pdu_to_tagged_stream
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: Payload
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    tag: packet_len
+    type: byte
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [736, 984.0]
+    rotation: 0
+    state: enabled
+- name: pdu_pdu_to_tagged_stream_0_0_0_0_0
+  id: pdu_pdu_to_tagged_stream
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: Payload
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    tag: packet_len
+    type: byte
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [3232, 704.0]
+    rotation: 0
+    state: enabled
+- name: pdu_pdu_to_tagged_stream_0_0_2
+  id: pdu_pdu_to_tagged_stream
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: Header
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    tag: packet_len
+    type: byte
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [720, 872.0]
+    rotation: 0
+    state: enabled
+- name: pdu_pdu_to_tagged_stream_0_0_2_0
+  id: pdu_pdu_to_tagged_stream
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: Header
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    tag: packet_len
+    type: byte
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [3216, 592.0]
+    rotation: 0
+    state: enabled
+- name: pdu_pdu_to_tagged_stream_0_1
+  id: pdu_pdu_to_tagged_stream
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    tag: packet_len
+    type: byte
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1288, 304.0]
+    rotation: 0
+    state: enabled
+- name: pdu_pdu_to_tagged_stream_0_1_0
+  id: pdu_pdu_to_tagged_stream
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    tag: packet_len
+    type: byte
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [3592, 208.0]
+    rotation: 0
+    state: enabled
+- name: pdu_pdu_to_tagged_stream_1
+  id: pdu_pdu_to_tagged_stream
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    tag: packet_len
+    type: byte
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [80, 2112.0]
+    rotation: 0
+    state: enabled
+- name: pdu_tagged_stream_to_pdu_0_0
+  id: pdu_tagged_stream_to_pdu
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    tag: packet_len
+    type: byte
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [888, 1936.0]
+    rotation: 180
+    state: enabled
+- name: pdu_tagged_stream_to_pdu_0_0_0
+  id: pdu_tagged_stream_to_pdu
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    tag: packet_len
+    type: byte
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [3400, 1808.0]
+    rotation: 180
+    state: enabled
+- name: pdu_tagged_stream_to_pdu_0_2
+  id: pdu_tagged_stream_to_pdu
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    tag: packet_len
+    type: byte
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [288, 1008.0]
+    rotation: 0
+    state: enabled
+- name: pdu_tagged_stream_to_pdu_0_2_0
+  id: pdu_tagged_stream_to_pdu
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    tag: packet_len
+    type: byte
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [2720, 656.0]
+    rotation: 0
+    state: enabled
+- name: pdu_tagged_stream_to_pdu_1_0_0
+  id: pdu_tagged_stream_to_pdu
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    tag: packet_len
+    type: byte
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [2936, 208.0]
+    rotation: 0
+    state: enabled
+- name: pdu_tagged_stream_to_pdu_2
+  id: pdu_tagged_stream_to_pdu
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    tag: packet_len
+    type: byte
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1040, 616.0]
+    rotation: 0
+    state: disabled
+- name: pdu_tagged_stream_to_pdu_2_0
+  id: pdu_tagged_stream_to_pdu
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    tag: packet_len
+    type: byte
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [3480, 464.0]
+    rotation: 0
+    state: disabled
+- name: qtgui_const_sink_x_0_0
+  id: qtgui_const_sink_x
+  parameters:
+    affinity: ''
+    alias: ''
+    alpha1: '1.0'
+    alpha10: '1.0'
+    alpha2: '1.0'
+    alpha3: '1.0'
+    alpha4: '1.0'
+    alpha5: '1.0'
+    alpha6: '1.0'
+    alpha7: '1.0'
+    alpha8: '1.0'
+    alpha9: '1.0'
+    autoscale: 'False'
+    axislabels: 'True'
+    color1: '"blue"'
+    color10: '"red"'
+    color2: '"red"'
+    color3: '"red"'
+    color4: '"red"'
+    color5: '"red"'
+    color6: '"red"'
+    color7: '"red"'
+    color8: '"red"'
+    color9: '"red"'
+    comment: ''
+    grid: 'False'
+    gui_hint: 1,0,1,1
+    label1: ''
+    label10: ''
+    label2: ''
+    label3: ''
+    label4: ''
+    label5: ''
+    label6: ''
+    label7: ''
+    label8: ''
+    label9: ''
+    legend: 'True'
+    marker1: '0'
+    marker10: '0'
+    marker2: '0'
+    marker3: '0'
+    marker4: '0'
+    marker5: '0'
+    marker6: '0'
+    marker7: '0'
+    marker8: '0'
+    marker9: '0'
+    name: '"Received Signal"'
+    nconnections: '1'
+    size: '1024'
+    style1: '0'
+    style10: '0'
+    style2: '0'
+    style3: '0'
+    style4: '0'
+    style5: '0'
+    style6: '0'
+    style7: '0'
+    style8: '0'
+    style9: '0'
+    tr_chan: '0'
+    tr_level: '0.0'
+    tr_mode: qtgui.TRIG_MODE_FREE
+    tr_slope: qtgui.TRIG_SLOPE_POS
+    tr_tag: '""'
+    type: complex
+    update_time: '0.10'
+    width1: '1'
+    width10: '1'
+    width2: '1'
+    width3: '1'
+    width4: '1'
+    width5: '1'
+    width6: '1'
+    width7: '1'
+    width8: '1'
+    width9: '1'
+    xmax: '2'
+    xmin: '-2'
+    ymax: '2'
+    ymin: '-2'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1440, 952.0]
+    rotation: 0
+    state: enabled
+- name: qtgui_const_sink_x_0_0_0
+  id: qtgui_const_sink_x
+  parameters:
+    affinity: ''
+    alias: ''
+    alpha1: '1.0'
+    alpha10: '1.0'
+    alpha2: '1.0'
+    alpha3: '1.0'
+    alpha4: '1.0'
+    alpha5: '1.0'
+    alpha6: '1.0'
+    alpha7: '1.0'
+    alpha8: '1.0'
+    alpha9: '1.0'
+    autoscale: 'False'
+    axislabels: 'True'
+    color1: '"blue"'
+    color10: '"red"'
+    color2: '"red"'
+    color3: '"red"'
+    color4: '"red"'
+    color5: '"red"'
+    color6: '"red"'
+    color7: '"red"'
+    color8: '"red"'
+    color9: '"red"'
+    comment: ''
+    grid: 'False'
+    gui_hint: ''
+    label1: ''
+    label10: ''
+    label2: ''
+    label3: ''
+    label4: ''
+    label5: ''
+    label6: ''
+    label7: ''
+    label8: ''
+    label9: ''
+    legend: 'True'
+    marker1: '0'
+    marker10: '0'
+    marker2: '0'
+    marker3: '0'
+    marker4: '0'
+    marker5: '0'
+    marker6: '0'
+    marker7: '0'
+    marker8: '0'
+    marker9: '0'
+    name: '"Transmitted ACK"'
+    nconnections: '1'
+    size: '1024'
+    style1: '0'
+    style10: '0'
+    style2: '0'
+    style3: '0'
+    style4: '0'
+    style5: '0'
+    style6: '0'
+    style7: '0'
+    style8: '0'
+    style9: '0'
+    tr_chan: '0'
+    tr_level: '0.0'
+    tr_mode: qtgui.TRIG_MODE_FREE
+    tr_slope: qtgui.TRIG_SLOPE_POS
+    tr_tag: '""'
+    type: complex
+    update_time: '0.10'
+    width1: '1'
+    width10: '1'
+    width2: '1'
+    width3: '1'
+    width4: '1'
+    width5: '1'
+    width6: '1'
+    width7: '1'
+    width8: '1'
+    width9: '1'
+    xmax: '2'
+    xmin: '-2'
+    ymax: '2'
+    ymin: '-2'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [3936, 672.0]
+    rotation: 0
+    state: enabled
+- name: qtgui_const_sink_x_1
+  id: qtgui_const_sink_x
+  parameters:
+    affinity: ''
+    alias: ''
+    alpha1: '1.0'
+    alpha10: '1.0'
+    alpha2: '1.0'
+    alpha3: '1.0'
+    alpha4: '1.0'
+    alpha5: '1.0'
+    alpha6: '1.0'
+    alpha7: '1.0'
+    alpha8: '1.0'
+    alpha9: '1.0'
+    autoscale: 'True'
+    axislabels: 'True'
+    color1: '"blue"'
+    color10: '"red"'
+    color2: '"red"'
+    color3: '"red"'
+    color4: '"red"'
+    color5: '"red"'
+    color6: '"red"'
+    color7: '"red"'
+    color8: '"red"'
+    color9: '"red"'
+    comment: ''
+    grid: 'False'
+    gui_hint: ''
+    label1: rx signal
+    label10: ''
+    label2: ''
+    label3: ''
+    label4: ''
+    label5: ''
+    label6: ''
+    label7: ''
+    label8: ''
+    label9: ''
+    legend: 'True'
+    marker1: '0'
+    marker10: '0'
+    marker2: '0'
+    marker3: '0'
+    marker4: '0'
+    marker5: '0'
+    marker6: '0'
+    marker7: '0'
+    marker8: '0'
+    marker9: '0'
+    name: '"RX signal"'
+    nconnections: '1'
+    size: '1024'
+    style1: '0'
+    style10: '0'
+    style2: '0'
+    style3: '0'
+    style4: '0'
+    style5: '0'
+    style6: '0'
+    style7: '0'
+    style8: '0'
+    style9: '0'
+    tr_chan: '0'
+    tr_level: '0.0'
+    tr_mode: qtgui.TRIG_MODE_FREE
+    tr_slope: qtgui.TRIG_SLOPE_POS
+    tr_tag: '""'
+    type: complex
+    update_time: '0.10'
+    width1: '1'
+    width10: '1'
+    width2: '1'
+    width3: '1'
+    width4: '1'
+    width5: '1'
+    width6: '1'
+    width7: '1'
+    width8: '1'
+    width9: '1'
+    xmax: '2'
+    xmin: '-2'
+    ymax: '2'
+    ymin: '-2'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1760, 1296.0]
+    rotation: 0
+    state: enabled
+- name: qtgui_const_sink_x_1_0
+  id: qtgui_const_sink_x
+  parameters:
+    affinity: ''
+    alias: ''
+    alpha1: '1.0'
+    alpha10: '1.0'
+    alpha2: '1.0'
+    alpha3: '1.0'
+    alpha4: '1.0'
+    alpha5: '1.0'
+    alpha6: '1.0'
+    alpha7: '1.0'
+    alpha8: '1.0'
+    alpha9: '1.0'
+    autoscale: 'True'
+    axislabels: 'True'
+    color1: '"blue"'
+    color10: '"red"'
+    color2: '"red"'
+    color3: '"red"'
+    color4: '"red"'
+    color5: '"red"'
+    color6: '"red"'
+    color7: '"red"'
+    color8: '"red"'
+    color9: '"red"'
+    comment: ''
+    grid: 'False'
+    gui_hint: ''
+    label1: rx signal
+    label10: ''
+    label2: ''
+    label3: ''
+    label4: ''
+    label5: ''
+    label6: ''
+    label7: ''
+    label8: ''
+    label9: ''
+    legend: 'True'
+    marker1: '0'
+    marker10: '0'
+    marker2: '0'
+    marker3: '0'
+    marker4: '0'
+    marker5: '0'
+    marker6: '0'
+    marker7: '0'
+    marker8: '0'
+    marker9: '0'
+    name: '"Received ACK Signal"'
+    nconnections: '1'
+    size: '1024'
+    style1: '0'
+    style10: '0'
+    style2: '0'
+    style3: '0'
+    style4: '0'
+    style5: '0'
+    style6: '0'
+    style7: '0'
+    style8: '0'
+    style9: '0'
+    tr_chan: '0'
+    tr_level: '0.0'
+    tr_mode: qtgui.TRIG_MODE_FREE
+    tr_slope: qtgui.TRIG_SLOPE_POS
+    tr_tag: '""'
+    type: complex
+    update_time: '0.10'
+    width1: '1'
+    width10: '1'
+    width2: '1'
+    width3: '1'
+    width4: '1'
+    width5: '1'
+    width6: '1'
+    width7: '1'
+    width8: '1'
+    width9: '1'
+    xmax: '2'
+    xmin: '-2'
+    ymax: '2'
+    ymin: '-2'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [4112, 1304.0]
+    rotation: 0
+    state: true
+- name: qtgui_time_sink_x_0
+  id: qtgui_time_sink_x
+  parameters:
+    affinity: ''
+    alias: ''
+    alpha1: '1.0'
+    alpha10: '1.0'
+    alpha2: '1.0'
+    alpha3: '1.0'
+    alpha4: '1.0'
+    alpha5: '1.0'
+    alpha6: '1.0'
+    alpha7: '1.0'
+    alpha8: '1.0'
+    alpha9: '1.0'
+    autoscale: 'True'
+    axislabels: 'True'
+    color1: blue
+    color10: dark blue
+    color2: red
+    color3: green
+    color4: black
+    color5: cyan
+    color6: magenta
+    color7: yellow
+    color8: dark red
+    color9: dark green
+    comment: ''
+    ctrlpanel: 'False'
+    entags: 'True'
+    grid: 'False'
+    gui_hint: ''
+    label1: rX to tx signal
+    label10: Signal 10
+    label2: RX signal
+    label3: Signal 3
+    label4: Signal 4
+    label5: Signal 5
+    label6: Signal 6
+    label7: Signal 7
+    label8: Signal 8
+    label9: Signal 9
+    legend: 'True'
+    marker1: '-1'
+    marker10: '-1'
+    marker2: '-1'
+    marker3: '-1'
+    marker4: '-1'
+    marker5: '-1'
+    marker6: '-1'
+    marker7: '-1'
+    marker8: '-1'
+    marker9: '-1'
+    name: '"Received Message"'
+    nconnections: '1'
+    size: '1024'
+    srate: samp_rate
+    stemplot: 'False'
+    style1: '1'
+    style10: '1'
+    style2: '1'
+    style3: '1'
+    style4: '1'
+    style5: '1'
+    style6: '1'
+    style7: '1'
+    style8: '1'
+    style9: '1'
+    tr_chan: '0'
+    tr_delay: '0'
+    tr_level: '0.0'
+    tr_mode: qtgui.TRIG_MODE_FREE
+    tr_slope: qtgui.TRIG_SLOPE_POS
+    tr_tag: '""'
+    type: float
+    update_time: '0.10'
+    width1: '1'
+    width10: '1'
+    width2: '1'
+    width3: '1'
+    width4: '1'
+    width5: '1'
+    width6: '1'
+    width7: '1'
+    width8: '1'
+    width9: '1'
+    ylabel: Amplitude
+    ymax: '1'
+    ymin: '-1'
+    yunit: '""'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [464, 1656.0]
+    rotation: 180
+    state: enabled
+- name: qtgui_time_sink_x_0_0
+  id: qtgui_time_sink_x
+  parameters:
+    affinity: ''
+    alias: ''
+    alpha1: '1.0'
+    alpha10: '1.0'
+    alpha2: '1.0'
+    alpha3: '1.0'
+    alpha4: '1.0'
+    alpha5: '1.0'
+    alpha6: '1.0'
+    alpha7: '1.0'
+    alpha8: '1.0'
+    alpha9: '1.0'
+    autoscale: 'True'
+    axislabels: 'True'
+    color1: blue
+    color10: dark blue
+    color2: red
+    color3: green
+    color4: black
+    color5: cyan
+    color6: magenta
+    color7: yellow
+    color8: dark red
+    color9: dark green
+    comment: ''
+    ctrlpanel: 'False'
+    entags: 'True'
+    grid: 'False'
+    gui_hint: ''
+    label1: rX to tx signal
+    label10: Signal 10
+    label2: RX signal
+    label3: Signal 3
+    label4: Signal 4
+    label5: Signal 5
+    label6: Signal 6
+    label7: Signal 7
+    label8: Signal 8
+    label9: Signal 9
+    legend: 'True'
+    marker1: '-1'
+    marker10: '-1'
+    marker2: '-1'
+    marker3: '-1'
+    marker4: '-1'
+    marker5: '-1'
+    marker6: '-1'
+    marker7: '-1'
+    marker8: '-1'
+    marker9: '-1'
+    name: '"Received ACK"'
+    nconnections: '1'
+    size: '1024'
+    srate: samp_rate
+    stemplot: 'False'
+    style1: '1'
+    style10: '1'
+    style2: '1'
+    style3: '1'
+    style4: '1'
+    style5: '1'
+    style6: '1'
+    style7: '1'
+    style8: '1'
+    style9: '1'
+    tr_chan: '0'
+    tr_delay: '0'
+    tr_level: '0.0'
+    tr_mode: qtgui.TRIG_MODE_FREE
+    tr_slope: qtgui.TRIG_SLOPE_POS
+    tr_tag: '""'
+    type: float
+    update_time: '0.10'
+    width1: '1'
+    width10: '1'
+    width2: '1'
+    width3: '1'
+    width4: '1'
+    width5: '1'
+    width6: '1'
+    width7: '1'
+    width8: '1'
+    width9: '1'
+    ylabel: Amplitude
+    ymax: '1'
+    ymin: '-1'
+    yunit: '""'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [2992, 1568.0]
+    rotation: 180
+    state: enabled
+- name: qtgui_time_sink_x_0_1
+  id: qtgui_time_sink_x
+  parameters:
+    affinity: ''
+    alias: ''
+    alpha1: '1.0'
+    alpha10: '1.0'
+    alpha2: '1.0'
+    alpha3: '1.0'
+    alpha4: '1.0'
+    alpha5: '1.0'
+    alpha6: '1.0'
+    alpha7: '1.0'
+    alpha8: '1.0'
+    alpha9: '1.0'
+    autoscale: 'True'
+    axislabels: 'True'
+    color1: blue
+    color10: dark blue
+    color2: red
+    color3: green
+    color4: black
+    color5: cyan
+    color6: magenta
+    color7: yellow
+    color8: dark red
+    color9: dark green
+    comment: ''
+    ctrlpanel: 'False'
+    entags: 'True'
+    grid: 'False'
+    gui_hint: ''
+    label1: TX signal
+    label10: Signal 10
+    label2: RX signal
+    label3: Signal 3
+    label4: Signal 4
+    label5: Signal 5
+    label6: Signal 6
+    label7: Signal 7
+    label8: Signal 8
+    label9: Signal 9
+    legend: 'True'
+    marker1: '-1'
+    marker10: '-1'
+    marker2: '-1'
+    marker3: '-1'
+    marker4: '-1'
+    marker5: '-1'
+    marker6: '-1'
+    marker7: '-1'
+    marker8: '-1'
+    marker9: '-1'
+    name: '"Sending Message"'
+    nconnections: '1'
+    size: '1024'
+    srate: samp_rate
+    stemplot: 'False'
+    style1: '1'
+    style10: '1'
+    style2: '1'
+    style3: '1'
+    style4: '1'
+    style5: '1'
+    style6: '1'
+    style7: '1'
+    style8: '1'
+    style9: '1'
+    tr_chan: '0'
+    tr_delay: '0'
+    tr_level: '0.0'
+    tr_mode: qtgui.TRIG_MODE_FREE
+    tr_slope: qtgui.TRIG_SLOPE_POS
+    tr_tag: '""'
+    type: float
+    update_time: '0.10'
+    width1: '1'
+    width10: '1'
+    width2: '1'
+    width3: '1'
+    width4: '1'
+    width5: '1'
+    width6: '1'
+    width7: '1'
+    width8: '1'
+    width9: '1'
+    ylabel: Amplitude
+    ymax: '1'
+    ymin: '-1'
+    yunit: '""'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [704, 640.0]
+    rotation: 0
+    state: enabled
+- name: qtgui_time_sink_x_0_1_0
+  id: qtgui_time_sink_x
+  parameters:
+    affinity: ''
+    alias: ''
+    alpha1: '1.0'
+    alpha10: '1.0'
+    alpha2: '1.0'
+    alpha3: '1.0'
+    alpha4: '1.0'
+    alpha5: '1.0'
+    alpha6: '1.0'
+    alpha7: '1.0'
+    alpha8: '1.0'
+    alpha9: '1.0'
+    autoscale: 'True'
+    axislabels: 'True'
+    color1: blue
+    color10: dark blue
+    color2: red
+    color3: green
+    color4: black
+    color5: cyan
+    color6: magenta
+    color7: yellow
+    color8: dark red
+    color9: dark green
+    comment: ''
+    ctrlpanel: 'False'
+    entags: 'True'
+    grid: 'False'
+    gui_hint: ''
+    label1: TX signal
+    label10: Signal 10
+    label2: RX signal
+    label3: Signal 3
+    label4: Signal 4
+    label5: Signal 5
+    label6: Signal 6
+    label7: Signal 7
+    label8: Signal 8
+    label9: Signal 9
+    legend: 'True'
+    marker1: '-1'
+    marker10: '-1'
+    marker2: '-1'
+    marker3: '-1'
+    marker4: '-1'
+    marker5: '-1'
+    marker6: '-1'
+    marker7: '-1'
+    marker8: '-1'
+    marker9: '-1'
+    name: '"Transmitted ACK"'
+    nconnections: '1'
+    size: '1024'
+    srate: samp_rate
+    stemplot: 'False'
+    style1: '1'
+    style10: '1'
+    style2: '1'
+    style3: '1'
+    style4: '1'
+    style5: '1'
+    style6: '1'
+    style7: '1'
+    style8: '1'
+    style9: '1'
+    tr_chan: '0'
+    tr_delay: '0'
+    tr_level: '0.0'
+    tr_mode: qtgui.TRIG_MODE_FREE
+    tr_slope: qtgui.TRIG_SLOPE_POS
+    tr_tag: '""'
+    type: float
+    update_time: '0.10'
+    width1: '1'
+    width10: '1'
+    width2: '1'
+    width3: '1'
+    width4: '1'
+    width5: '1'
+    width6: '1'
+    width7: '1'
+    width8: '1'
+    width9: '1'
+    ylabel: Amplitude
+    ymax: '1'
+    ymin: '-1'
+    yunit: '""'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [3128, 320.0]
+    rotation: 0
+    state: enabled
+- name: soapy_bladerf_sink_0
+  id: soapy_bladerf_sink
+  parameters:
+    affinity: ''
+    alias: ''
+    bandwidth: '10000'
+    center_freq: freqA
+    comment: ''
+    dev_args: ''
+    freq_correction: '0'
+    gain: '43'
+    samp_rate: samp_rate
+    type: fc32
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [4320, 728.0]
+    rotation: 0
+    state: disabled
+- name: soapy_bladerf_sink_0_0
+  id: soapy_bladerf_sink
+  parameters:
+    affinity: ''
+    alias: ''
+    bandwidth: '10000'
+    center_freq: freqT
+    comment: ''
+    dev_args: bladerf=0
+    freq_correction: '0'
+    gain: '43'
+    samp_rate: samp_rate
+    type: fc32
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1888, 1080.0]
+    rotation: 0
+    state: disabled
+- name: soapy_bladerf_source_0
+  id: soapy_bladerf_source
+  parameters:
+    affinity: ''
+    alias: ''
+    bandwidth: '10000'
+    center_freq: freqT
+    comment: ''
+    dev_args: ''
+    freq_correction: '0'
+    gain: '25'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    samp_rate: samp_rate
+    type: fc32
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [280, 1272.0]
+    rotation: 0
+    state: disabled
+- name: soapy_bladerf_source_1
+  id: soapy_bladerf_source
+  parameters:
+    affinity: ''
+    alias: ''
+    bandwidth: '10000'
+    center_freq: freqA
+    comment: ''
+    dev_args: ''
+    freq_correction: '0'
+    gain: '25'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    samp_rate: samp_rate
+    type: fc32
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [2728, 1200.0]
+    rotation: 0
+    state: disabled
+- name: virtual_sink_0
+  id: virtual_sink
+  parameters:
+    alias: ''
+    comment: ''
+    stream_id: ack
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [2624, 1920.0]
+    rotation: 180
+    state: enabled
+- name: virtual_sink_0_0
+  id: virtual_sink
+  parameters:
+    alias: ''
+    comment: ''
+    stream_id: aa
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [2096, 312.0]
+    rotation: 0
+    state: enabled
+- name: virtual_sink_0_0_0
+  id: virtual_sink
+  parameters:
+    alias: ''
+    comment: ''
+    stream_id: ack2
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [4296, 192.0]
+    rotation: 0
+    state: enabled
+- name: virtual_sink_0_1
+  id: virtual_sink
+  parameters:
+    alias: ''
+    comment: ''
+    stream_id: msg
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [144, 2256.0]
+    rotation: 180
+    state: enabled
+- name: virtual_sink_1
+  id: virtual_sink
+  parameters:
+    alias: ''
+    comment: ''
+    stream_id: ack1
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [32, 2176.0]
+    rotation: 180
+    state: enabled
+- name: virtual_sink_2
+  id: virtual_sink
+  parameters:
+    alias: ''
+    comment: ''
+    stream_id: status
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [2592, 1832.0]
+    rotation: 180
+    state: enabled
+- name: virtual_sink_3
+  id: virtual_sink
+  parameters:
+    alias: ''
+    comment: ''
+    stream_id: count
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [928, 272.0]
+    rotation: 0
+    state: enabled
+- name: virtual_source_0
+  id: virtual_source
+  parameters:
+    alias: ''
+    comment: ''
+    stream_id: status
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [16, 216.0]
+    rotation: 0
+    state: enabled
+- name: virtual_source_0_0
+  id: virtual_source
+  parameters:
+    alias: ''
+    comment: ''
+    stream_id: aa
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [8, 888.0]
+    rotation: 0
+    state: enabled
+- name: virtual_source_0_0_0
+  id: virtual_source
+  parameters:
+    alias: ''
+    comment: ''
+    stream_id: ack2
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [2560, 512.0]
+    rotation: 0
+    state: enabled
+- name: virtual_source_1
+  id: virtual_source
+  parameters:
+    alias: ''
+    comment: ''
+    stream_id: ack
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [360, 480.0]
+    rotation: 0
+    state: enabled
+- name: virtual_source_1_0
+  id: virtual_source
+  parameters:
+    alias: ''
+    comment: ''
+    stream_id: msg
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [24, 272.0]
+    rotation: 0
+    state: enabled
+- name: virtual_source_1_0_0_0
+  id: virtual_source
+  parameters:
+    alias: ''
+    comment: ''
+    stream_id: ack1
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [2728, 264.0]
+    rotation: 0
+    state: enabled
+- name: virtual_source_3
+  id: virtual_source
+  parameters:
+    alias: ''
+    comment: ''
+    stream_id: count
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [3208, 1760.0]
+    rotation: 180
+    state: enabled
+- name: zeromq_pull_source_0_0
+  id: zeromq_pull_source
+  parameters:
+    address: tcp://127.0.0.1:49203
+    affinity: ''
+    alias: ''
+    bind: 'False'
+    comment: ''
+    hwm: '-1'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    pass_tags: 'False'
+    timeout: '100'
+    type: complex
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [80, 1376.0]
+    rotation: 0
+    state: enabled
+- name: zeromq_pull_source_0_0_0
+  id: zeromq_pull_source
+  parameters:
+    address: tcp://127.0.0.1:49205
+    affinity: ''
+    alias: ''
+    bind: 'False'
+    comment: ack recive
+    hwm: '-1'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    pass_tags: 'False'
+    timeout: '100'
+    type: complex
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [2608, 1288.0]
+    rotation: 0
+    state: enabled
+- name: zeromq_push_sink_0_0
+  id: zeromq_push_sink
+  parameters:
+    address: tcp://127.0.0.1:49206
+    affinity: ''
+    alias: ''
+    bind: 'True'
+    comment: ''
+    hwm: '-1'
+    pass_tags: 'False'
+    timeout: '100'
+    type: complex
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1856, 864.0]
+    rotation: 0
+    state: enabled
+- name: zeromq_push_sink_0_0_0
+  id: zeromq_push_sink
+  parameters:
+    address: tcp://127.0.0.1:49204
+    affinity: ''
+    alias: ''
+    bind: 'True'
+    comment: ack trx
+    hwm: '-1'
+    pass_tags: 'False'
+    timeout: '100'
+    type: complex
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [4352, 584.0]
+    rotation: 0
+    state: enabled
+
+connections:
+- [blocks_char_to_float_0_0, '0', qtgui_time_sink_x_0_1, '0']
+- [blocks_char_to_float_0_0_0, '0', qtgui_time_sink_x_0_1_0, '0']
+- [blocks_char_to_float_1_1, '0', fec_extended_tagged_decoder_2, '0']
+- [blocks_char_to_float_1_1_0, '0', fec_extended_tagged_decoder_2_0, '0']
+- [blocks_char_to_float_2_0, '0', qtgui_time_sink_x_0, '0']
+- [blocks_char_to_float_2_0_0, '0', qtgui_time_sink_x_0_0, '0']
+- [blocks_multiply_const_vxx_0_0, '0', blocks_throttle2_0_1, '0']
+- [blocks_multiply_const_vxx_0_0, '0', soapy_bladerf_sink_0_0, '0']
+- [blocks_multiply_const_vxx_0_0_0, '0', blocks_throttle2_0_1_0, '0']
+- [blocks_multiply_const_vxx_0_0_0, '0', soapy_bladerf_sink_0, '0']
+- [blocks_repack_bits_bb_0, '0', blocks_char_to_float_2_0, '0']
+- [blocks_repack_bits_bb_0, '0', pdu_tagged_stream_to_pdu_0_0, '0']
+- [blocks_repack_bits_bb_0_0, '0', blocks_char_to_float_2_0_0, '0']
+- [blocks_repack_bits_bb_0_0, '0', pdu_tagged_stream_to_pdu_0_0_0, '0']
+- [blocks_repack_bits_bb_0_0_0_0, '0', pdu_tagged_stream_to_pdu_0_2, '0']
+- [blocks_repack_bits_bb_0_0_0_0_0, '0', pdu_tagged_stream_to_pdu_0_2_0, '0']
+- [blocks_repack_bits_bb_0_0_1, '0', fec_extended_tagged_encoder_0_1_0, '0']
+- [blocks_repack_bits_bb_0_0_1_0, '0', fec_extended_tagged_encoder_0_1_0_0, '0']
+- [blocks_tagged_stream_mux_0_0_0, '0', digital_constellation_modulator_0_0, '0']
+- [blocks_tagged_stream_mux_0_0_0_0, '0', digital_constellation_modulator_0_0_0, '0']
+- [blocks_throttle2_0, '0', digital_symbol_sync_xx_0, '0']
+- [blocks_throttle2_0_0, '0', digital_symbol_sync_xx_0_0, '0']
+- [blocks_throttle2_0_1, '0', zeromq_push_sink_0_0, '0']
+- [blocks_throttle2_0_1_0, '0', zeromq_push_sink_0_0_0, '0']
+- [blocks_unpack_k_bits_bb_0_0, '0', digital_correlate_access_code_xx_ts_0, '0']
+- [blocks_unpack_k_bits_bb_0_0_0, '0', digital_correlate_access_code_xx_ts_0_0, '0']
+- [digital_constellation_decoder_cb_0, '0', digital_diff_decoder_bb_0, '0']
+- [digital_constellation_decoder_cb_0_0, '0', digital_diff_decoder_bb_0_0, '0']
+- [digital_constellation_modulator_0_0, '0', blocks_multiply_const_vxx_0_0, '0']
+- [digital_constellation_modulator_0_0, '0', qtgui_const_sink_x_0_0, '0']
+- [digital_constellation_modulator_0_0_0, '0', blocks_multiply_const_vxx_0_0_0, '0']
+- [digital_constellation_modulator_0_0_0, '0', qtgui_const_sink_x_0_0_0, '0']
+- [digital_correlate_access_code_xx_ts_0, '0', blocks_repack_bits_bb_0, '0']
+- [digital_correlate_access_code_xx_ts_0, '0', digital_map_bb_0_0, '0']
+- [digital_correlate_access_code_xx_ts_0_0, '0', digital_map_bb_0_0_0, '0']
+- [digital_costas_loop_cc_0, '0', digital_constellation_decoder_cb_0, '0']
+- [digital_costas_loop_cc_0, '0', qtgui_const_sink_x_1, '0']
+- [digital_costas_loop_cc_0_0, '0', digital_constellation_decoder_cb_0_0, '0']
+- [digital_costas_loop_cc_0_0, '0', qtgui_const_sink_x_1_0, '0']
+- [digital_crc_append_0_0_0, out, pdu_pdu_to_tagged_stream_0_1, pdus]
+- [digital_crc_append_0_0_0_0, out, pdu_pdu_to_tagged_stream_0_1_0, pdus]
+- [digital_crc_check_0, ok, epy_block_0_0, in]
+- [digital_crc_check_0_0, ok, epy_block_0_0_0, in]
+- [digital_crc_check_0_0, ok, virtual_sink_0, '0']
+- [digital_diff_decoder_bb_0, '0', digital_map_bb_0, '0']
+- [digital_diff_decoder_bb_0_0, '0', digital_map_bb_0_1, '0']
+- [digital_linear_equalizer_0, '0', digital_costas_loop_cc_0, '0']
+- [digital_linear_equalizer_0_0, '0', digital_costas_loop_cc_0_0, '0']
+- [digital_map_bb_0, '0', blocks_unpack_k_bits_bb_0_0, '0']
+- [digital_map_bb_0_0, '0', blocks_char_to_float_1_1, '0']
+- [digital_map_bb_0_0_0, '0', blocks_char_to_float_1_1_0, '0']
+- [digital_map_bb_0_1, '0', blocks_unpack_k_bits_bb_0_0_0, '0']
+- [digital_protocol_formatter_async_0_0, header, pdu_pdu_to_tagged_stream_0_0_2, pdus]
+- [digital_protocol_formatter_async_0_0, payload, pdu_pdu_to_tagged_stream_0_0_0_0,
+  pdus]
+- [digital_protocol_formatter_async_0_0_0, header, pdu_pdu_to_tagged_stream_0_0_2_0,
+  pdus]
+- [digital_protocol_formatter_async_0_0_0, payload, pdu_pdu_to_tagged_stream_0_0_0_0_0,
+  pdus]
+- [digital_symbol_sync_xx_0, '0', digital_linear_equalizer_0, '0']
+- [digital_symbol_sync_xx_0_0, '0', digital_linear_equalizer_0_0, '0']
+- [epy_block_0, status_out, virtual_sink_2, '0']
+- [epy_block_0_0, out, epy_block_5, in]
+- [epy_block_0_0, out, epy_block_7, in]
+- [epy_block_0_0, out, epy_block_7_0, pdu_in]
+- [epy_block_0_0, out, epy_block_8, in]
+- [epy_block_0_0, out, pdu_pdu_to_tagged_stream_0_0, pdus]
+- [epy_block_0_0_0, out, epy_block_0, in]
+- [epy_block_1_0, pdu_out, blocks_message_debug_0, print]
+- [epy_block_1_0, pdu_out, virtual_sink_0_1, '0']
+- [epy_block_2, ack_out, pdu_pdu_to_tagged_stream_1, pdus]
+- [epy_block_3_0, packet_count_out, virtual_sink_3, '0']
+- [epy_block_3_0, packet_out, blocks_message_debug_0_0_1, print]
+- [epy_block_3_0, packet_out, digital_crc_append_0_0_0, in]
+- [epy_block_3_0, packet_out, pdu_pdu_to_tagged_stream_0, pdus]
+- [epy_block_4_0, addr_out, epy_block_3_0, dest_addr_in]
+- [epy_block_4_0, msg_out, epy_block_3_0, msg_in]
+- [epy_block_5, header_out, epy_block_2, data_in]
+- [epy_block_7, out, blocks_message_debug_0, print]
+- [epy_block_7, out, virtual_sink_0_1, '0']
+- [epy_block_7_0, pdu_out, epy_block_1_0, pdu_in]
+- [epy_block_8, out, epy_block_2, data_in]
+- [fec_extended_tagged_decoder_2, '0', blocks_repack_bits_bb_0, '0']
+- [fec_extended_tagged_decoder_2_0, '0', blocks_repack_bits_bb_0_0, '0']
+- [fec_extended_tagged_encoder_0_1_0, '0', virtual_sink_0_0, '0']
+- [fec_extended_tagged_encoder_0_1_0_0, '0', virtual_sink_0_0_0, '0']
+- [pdu_pdu_to_tagged_stream_0, '0', blocks_char_to_float_0_0, '0']
+- [pdu_pdu_to_tagged_stream_0_0, '0', blocks_file_sink_0, '0']
+- [pdu_pdu_to_tagged_stream_0_0_0_0, '0', blocks_tagged_stream_mux_0_0_0, '1']
+- [pdu_pdu_to_tagged_stream_0_0_0_0_0, '0', blocks_tagged_stream_mux_0_0_0_0, '1']
+- [pdu_pdu_to_tagged_stream_0_0_2, '0', blocks_tagged_stream_mux_0_0_0, '0']
+- [pdu_pdu_to_tagged_stream_0_0_2_0, '0', blocks_tagged_stream_mux_0_0_0_0, '0']
+- [pdu_pdu_to_tagged_stream_0_1, '0', blocks_repack_bits_bb_0_0_1, '0']
+- [pdu_pdu_to_tagged_stream_0_1, '0', virtual_sink_0_0, '0']
+- [pdu_pdu_to_tagged_stream_0_1_0, '0', blocks_repack_bits_bb_0_0_1_0, '0']
+- [pdu_pdu_to_tagged_stream_1, '0', virtual_sink_1, '0']
+- [pdu_tagged_stream_to_pdu_0_0, pdus, digital_crc_check_0, in]
+- [pdu_tagged_stream_to_pdu_0_0_0, pdus, digital_crc_check_0_0, in]
+- [pdu_tagged_stream_to_pdu_0_2, pdus, digital_protocol_formatter_async_0_0, in]
+- [pdu_tagged_stream_to_pdu_0_2_0, pdus, digital_protocol_formatter_async_0_0_0, in]
+- [pdu_tagged_stream_to_pdu_1_0_0, pdus, digital_crc_append_0_0_0_0, in]
+- [pdu_tagged_stream_to_pdu_2_0, pdus, blocks_message_debug_0_0_0, print]
+- [soapy_bladerf_source_0, '0', digital_symbol_sync_xx_0, '0']
+- [soapy_bladerf_source_1, '0', digital_symbol_sync_xx_0_0, '0']
+- [virtual_source_0, '0', epy_block_3_0, reset_in]
+- [virtual_source_0, '0', epy_block_4_0, status_in]
+- [virtual_source_0_0, '0', blocks_repack_bits_bb_0_0_0_0, '0']
+- [virtual_source_0_0, '0', pdu_tagged_stream_to_pdu_0_2, '0']
+- [virtual_source_0_0_0, '0', blocks_repack_bits_bb_0_0_0_0_0, '0']
+- [virtual_source_1, '0', epy_block_3_0, ack_in]
+- [virtual_source_1_0, '0', epy_block_4_0, msg_in]
+- [virtual_source_1_0_0_0, '0', blocks_char_to_float_0_0_0, '0']
+- [virtual_source_1_0_0_0, '0', pdu_tagged_stream_to_pdu_1_0_0, '0']
+- [virtual_source_3, '0', epy_block_0, threshold_in]
+- [zeromq_pull_source_0_0, '0', blocks_throttle2_0, '0']
+- [zeromq_pull_source_0_0_0, '0', blocks_throttle2_0_0, '0']
+
+metadata:
+  file_format: 1
+  grc_version: 3.10.9.2
