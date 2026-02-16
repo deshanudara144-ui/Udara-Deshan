@@ -1,4 +1,4 @@
-### Communication Design Project – Semester 3
+# Communication Design Project – Semester 3
 # Two-Way Digital Paging System  
 
 This project presents the design and implementation of a bidirectional digital paging system using BladeRF SDR hardware.  
