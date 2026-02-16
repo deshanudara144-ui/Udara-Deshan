@@ -1,6 +1,5 @@
-# Udara-Deshan
-# Two-Way Digital Paging System  
 ### Communication Design Project – Semester 3
+# Two-Way Digital Paging System  
 
 This project presents the design and implementation of a bidirectional digital paging system using BladeRF SDR hardware.  
 The system integrates reliable RF communication, acknowledgement mechanisms, and a simple messaging-style graphical interface.
