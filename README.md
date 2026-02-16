@@ -1,5 +1,5 @@
 # Udara-Deshan
-# 📡 Two-Way Digital Paging System  
+# Two-Way Digital Paging System  
 ### Communication Design Project – Semester 3
 
 This project presents the design and implementation of a bidirectional digital paging system using BladeRF SDR hardware.  
@@ -7,14 +7,14 @@ The system integrates reliable RF communication, acknowledgement mechanisms, and
 
 ---
 
-## 🔍 Project Overview
+## Project Overview
 
 The system enables two users to exchange short text messages wirelessly through Software Defined Radio (SDR) technology.  
 It combines physical layer modulation techniques with data-link layer reliability mechanisms.
 
 ---
 
-## 🚀 Key Functionalities
+## Key Functionalities
 
 • Bidirectional RF Communication using BladeRF  
 • QPSK (Quadrature Phase Shift Keying) modulation  
@@ -27,16 +27,16 @@ It combines physical layer modulation techniques with data-link layer reliabilit
 
 ---
 
-## 🧱 Frame Structure
+## Frame Structure
 
-### 📦 Message Frame
+### Message Frame
 - Preamble  
 - Source & Destination Address  
 - Sequence Number  
 - Payload  
 - CRC32  
 
-### ✅ Acknowledgement Frame
+### Acknowledgement Frame
 - Preamble  
 - Addresses  
 - Sequence Number  
@@ -45,7 +45,7 @@ It combines physical layer modulation techniques with data-link layer reliabilit
 
 ---
 
-## 🖥️ User Interface
+## User Interface
 
 The graphical interface is designed similar to a lightweight chat application:
 
@@ -56,7 +56,7 @@ The graphical interface is designed similar to a lightweight chat application:
 
 ---
 
-## ⚙️ System Workflow
+## System Workflow
 
 1. User enters text message in GUI  
 2. Message is packetized into structured frames  
@@ -67,7 +67,7 @@ The graphical interface is designed similar to a lightweight chat application:
 
 ---
 
-## 🛠 Technologies Used
+## Technologies Used
 
 - BladeRF SDR Platform  
 - Python-based signal processing  
@@ -77,7 +77,7 @@ The graphical interface is designed similar to a lightweight chat application:
 
 ---
 
-## 🎓 Learning Outcomes
+## Learning Outcomes
 
 Through this project, we gained:
 
@@ -89,7 +89,7 @@ Through this project, we gained:
 
 ---
 
-## 🔮 Future Improvements
+## Future Improvements
 
 - Forward Error Correction (FEC)
 - Secure encrypted messaging
@@ -98,7 +98,7 @@ Through this project, we gained:
 
 ---
 
-## 👨‍💻 Team Members
+## Team Members
 
 - Dulith Kavinda  
 - Achintha Bandara  
